@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xjshi.github.io/"/>
-  <updated>2016-11-27T10:52:14.000Z</updated>
+  <updated>2016-12-05T15:27:30.000Z</updated>
   <id>https://xjshi.github.io/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>给自己的话</title>
+    <link href="https://xjshi.github.io/2016/12/05/%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AF%9D/"/>
+    <id>https://xjshi.github.io/2016/12/05/给自己的话/</id>
+    <published>2016-12-05T15:22:59.000Z</published>
+    <updated>2016-12-05T15:27:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>对自己写的每一行代码负责。     2016-12-06 23:26</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;对自己写的每一行代码负责。     2016-12-06 23:26&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>简单看了眼tinyfool经常提到的日历控件源代码</title>
