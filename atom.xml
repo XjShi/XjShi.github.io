@@ -147,26 +147,6 @@
   </entry>
   
   <entry>
-    <title>给自己的话</title>
-    <link href="https://xjshi.github.io/2016/12/05/%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E8%AF%9D/"/>
-    <id>https://xjshi.github.io/2016/12/05/给自己的话/</id>
-    <published>2016-12-05T15:22:59.000Z</published>
-    <updated>2016-12-05T15:27:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>对自己写的每一行代码负责。     2016-12-06 23:26</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;对自己写的每一行代码负责。     2016-12-06 23:26&lt;/p&gt;
-
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>简单看了眼tinyfool经常提到的日历控件源代码</title>
     <link href="https://xjshi.github.io/2016/11/27/%E7%AE%80%E5%8D%95%E7%9C%8B%E4%BA%86%E7%9C%BCtinyfool%E7%BB%8F%E5%B8%B8%E6%8F%90%E5%88%B0%E7%9A%84%E6%97%A5%E5%8E%86%E6%8E%A7%E4%BB%B6%E6%BA%90%E4%BB%A3%E7%A0%81/"/>
     <id>https://xjshi.github.io/2016/11/27/简单看了眼tinyfool经常提到的日历控件源代码/</id>
@@ -208,6 +188,75 @@
     
     
       <category term="胡说八道" scheme="https://xjshi.github.io/tags/%E8%83%A1%E8%AF%B4%E5%85%AB%E9%81%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>iOS 中关于字符串的一些问题</title>
+    <link href="https://xjshi.github.io/2016/08/22/iOS-%E4%B8%AD%E5%85%B3%E4%BA%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"/>
+    <id>https://xjshi.github.io/2016/08/22/iOS-中关于字符串的一些问题/</id>
+    <published>2016-08-22T06:08:09.000Z</published>
+    <updated>2017-02-22T09:11:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文是看<a href="https://developer.apple.com/library/content/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/Introduction/Introduction.html#//apple_ref/doc/uid/TP40009542-CH1-SW1" target="_blank" rel="external">Text Programming Guide for iOS</a>的简单总结。</p>
+<p>先来一张图片看看排版中有关的概念。</p>
+<img src="/2016/08/22/iOS-中关于字符串的一些问题/concept.png" alt="concept.png" title="">
+<h2 id="如何选择？"><a href="#如何选择？" class="headerlink" title="如何选择？"></a>如何选择？</h2><p>UIKit、TextKit、CoreText。如何选择？ </p>
+<p>大多数情况下，UIKit 可以满足你的需求。  </p>
+<p>在 UILabe、UITextField、UITextView 下层有一个强大的排版引擎，就是 TextKit。如果你需要自定义排版过程或者要干预排版行为，那就使用 TextKit。TextKit 提供高质量的印刷服务（typographical service）让一ing用存储、排列（lay out）、展示排版特征，如字间距、换行符等。</p>
+<p>如果这还不能满足你的需求，那就去用 Core Text 吧。TextKit是基于 Core Text 的。</p>
+<h2 id="排版有关的概念"><a href="#排版有关的概念" class="headerlink" title="排版有关的概念"></a>排版有关的概念</h2><h3 id="字符与字形"><a href="#字符与字形" class="headerlink" title="字符与字形"></a>字符与字形</h3><p>字符（Characers）：这个比较抽象，直接举例子吧。比如，英文字符的大写“A”，汉字的“你”等。尽管自负通过一个显示区域内可识别的形状表示，但是字符并不等于就是那个形状。这个形状可以称为“字型”。<br>字形（Glyphs）：一个字符的不同表示形式。如大写字母A的字形：</p>
+<img src="/2016/08/22/iOS-中关于字符串的一些问题/GlyphsOfCharacterA.png" alt="GlyphsOfCharacterA.png" title="">
+<h3 id="文字布局"><a href="#文字布局" class="headerlink" title="文字布局"></a>文字布局</h3><p>直接来看个图好了。</p>
+<img src="/2016/08/22/iOS-中关于字符串的一些问题/GlyphMetrics.png" alt="GlyphMetrics.png" title="">
+<h2 id="使用Textkit"><a href="#使用Textkit" class="headerlink" title="使用Textkit"></a>使用Textkit</h2><p>TextKit 让你能够完全控制用户界面元素的文字渲染。<br>来看个图，这个图展示了 TextKit 与 iOS 中其他文字、图形框架的关系：</p>
+<img src="/2016/08/22/iOS-中关于字符串的一些问题/TextKitFrameworkPosition.png" alt="TextKitFrameworkPosition.png" title="">
+<h3 id="TextKit-中主要的几个对象"><a href="#TextKit-中主要的几个对象" class="headerlink" title="TextKit 中主要的几个对象"></a>TextKit 中主要的几个对象</h3><img src="/2016/08/22/iOS-中关于字符串的一些问题/PrimaryTextKitObjcts.png" alt="PrimaryTextKitObjcts.png" title="">
+<p>上面这个图展示了数据在 TextKit 的几个主要对象之间的流动。Text Storage 存储 Text View展示的文字，并且由 Layout Manager 排列到一个由 Text Container 定义的区域。</p>
+<p><code>NSTextContainer</code>：定义一个文字可以排列的区域。一般情况下是一个矩形区域。但是，你可以定义其子类来创建其他形状的区域，如圆形、五边形等。除此之外，TextContainer 还维护了一个 BezierPath 的数组来定义上述区域中不会被布局的部分。</p>
+<p><code>NSTextStorage</code>：定义基本的存储机制。<code>NSTextStorage</code>是’NSMutableAttributedString’的子类，存储并维护由文字系统操作的属性（attributes）。确保文字和属性在编辑操作时保持不变。除此之外，一个<code>NSTextStorage</code>对象维护一组<code>NSLayoutManager</code>的对象，并在有任何字符或者属性变化时通知这些布局对象，以便重新布局或者重新显示。</p>
+<p><code>NSLayoutManager</code>：协调其他的文字处理对象。它协调存储在<code>NSTextStorage</code>对象中的数据渲染成视图上的问题。它把 Unicode 字符映射为字形，并监督字形布局在<code>NSTextContainer</code>对象定义的区域内。</p>
+<h3 id="文字属性"><a href="#文字属性" class="headerlink" title="文字属性"></a>文字属性</h3><p>文字属性主要由三类：字符属性、段落属性、文档属性。字符属性包括字体、颜色、角标等，这些属性可以跟一个范围内的字符相关联。段落属性包括缩进、行间距等。文档属性包括页面大小、页边距、页面缩放百分比等。</p>
+<p>字符属性、段落属性平时都用的比较多，不多说。只是要注意，如果要使用自定义的属性，就要子类化<code>NSLayoutManager</code>。重写<code>drawGlyphsForGlyphRange:atPoint:</code>方法。</p>
+<p>编辑属性字符串会造成矛盾的，需要通过<code>fixAttributesInRange:</code>来修正。</p>
+<h3 id="以编程的方式改变-Text-Storage"><a href="#以编程的方式改变-Text-Storage" class="headerlink" title="以编程的方式改变 Text Storage"></a>以编程的方式改变 Text Storage</h3><p>主要分三个步骤：</p>
+<ol>
+<li>发送<code>beginEditing</code>消息；</li>
+<li>发送一些编辑消息。每发送一个消息，text storage就会调用<code>edited：range：changeInLength：</code>来追踪影响的范围；</li>
+<li>发送<code>endEditing</code>消息。这会造成它给代理发送<code>textStorage:willProcessEditing:range:changeInLength:</code>消息，并且调用自己的<code>processEditing</code>方法，以修复属性的改变。</li>
+</ol>
+<h3 id="布局文字"><a href="#布局文字" class="headerlink" title="布局文字"></a>布局文字</h3><p>布局管理（NSLayoutManager）对象是 Text Kit 中文字显示的核心控制对象。布局管理对象执行以下这些操作：</p>
+<ul>
+<li>控制文字存储（NSTextStorage）和文字容器(NSTextContainer)对象；</li>
+<li>为字符生成字形；</li>
+<li>计算字形位置并且存储这些信息；</li>
+<li>管理字形的范围和字符(Manages ranges of glyphs and characters);</li>
+<li>当 view 请求的时候，绘制字形；</li>
+<li>计算每一行文字的边界矩形（Computes bounding box rectanle for lines of text）；</li>
+<li>控制断字（hyphenation）；</li>
+<li>操纵字符属性和字形属性。</li>
+</ul>
+<p>布局管理对象执行文字布局分为两步：生成字形、排列字形。这两步都是惰性的，并且在计算完成后，会缓存这些信息，以提高后续调用时的性能。</p>
+<h2 id="Core-Text"><a href="#Core-Text" class="headerlink" title="Core Text"></a>Core Text</h2><blockquote>
+<p>如果使用 Core Text 或者 Core Graphics 来绘制文字，一定要记得对CTM(current text matrix)做变换。</p>
+</blockquote>
+<img src="/2016/08/22/iOS-中关于字符串的一些问题/CoreTextLayoutObjects.png" alt="CoreTextLayoutObjects.png" title="">
+<p>这里说几个需要注意的点。<code>CTFramesetterRef</code>需要用一个属性字符串和一个图形路径（graphics path）作为输入来初始化。framesetter 会生成一个或者多个frame。</p>
+<p>内部生成frame的过程是这样的，framesetter调用typesetter对象来把属性字符串中的字符转化为字形，并把字形填进行，用行来填frame。</p>
+<p>一行里边会包含一个或者几个<code>CTRun</code>对象，每个run是一串有相同属性和方向的字形。</p>
+<p>Core Text 的具体使用，看唐巧的这篇文章吧：<a href="http://blog.devtang.com/2013/10/21/the-tech-detail-of-ape-client-3/" target="_blank" rel="external">http://blog.devtang.com/2013/10/21/the-tech-detail-of-ape-client-3/</a></p>
+<hr>
+<p>转载请注明出处：<a href="https://xjshi.github.com" target="_blank" rel="external">https://xjshi.github.com</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文是看&lt;a href=&quot;https://developer.apple.com/library/content/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/Introduction/Introd
+    
+    </summary>
+    
+    
+      <category term="iOS" scheme="https://xjshi.github.io/tags/iOS/"/>
     
   </entry>
   
