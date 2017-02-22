@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xjshi.github.io/"/>
-  <updated>2017-02-22T05:45:29.000Z</updated>
+  <updated>2017-01-06T17:18:17.000Z</updated>
   <id>https://xjshi.github.io/</id>
   
   <author>
@@ -14,26 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>test</title>
-    <link href="https://xjshi.github.io/2017/02/22/test/"/>
-    <id>https://xjshi.github.io/2017/02/22/test/</id>
-    <published>2017-02-22T05:44:41.000Z</published>
-    <updated>2017-02-22T05:45:29.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>当前日期是2017-2-22，你造吗？</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;当前日期是2017-2-22，你造吗？&lt;/p&gt;
-
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>做一个产品</title>
@@ -228,6 +208,26 @@
     
     
       <category term="胡说八道" scheme="https://xjshi.github.io/tags/%E8%83%A1%E8%AF%B4%E5%85%AB%E9%81%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>test</title>
+    <link href="https://xjshi.github.io/2016/07/25/test/"/>
+    <id>https://xjshi.github.io/2016/07/25/test/</id>
+    <published>2016-07-25T05:44:41.000Z</published>
+    <updated>2017-02-22T05:46:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>当前日期是2017-2-22，你造吗？</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;当前日期是2017-2-22，你造吗？&lt;/p&gt;
+
+    
+    </summary>
+    
     
   </entry>
   
