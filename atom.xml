@@ -211,24 +211,4 @@
     
   </entry>
   
-  <entry>
-    <title>test</title>
-    <link href="https://xjshi.github.io/2016/07/25/test/"/>
-    <id>https://xjshi.github.io/2016/07/25/test/</id>
-    <published>2016-07-25T05:44:41.000Z</published>
-    <updated>2017-02-22T05:46:36.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>当前日期是2017-2-22，你造吗？</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;当前日期是2017-2-22，你造吗？&lt;/p&gt;
-
-    
-    </summary>
-    
-    
-  </entry>
-  
 </feed>
