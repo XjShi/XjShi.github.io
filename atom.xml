@@ -265,7 +265,7 @@
     <link href="https://xjshi.github.io/2016/05/24/iOS%E4%B8%AD%E5%85%B3%E4%BA%8E%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E7%82%B9/"/>
     <id>https://xjshi.github.io/2016/05/24/iOS中关于线程的一些点/</id>
     <published>2016-05-24T12:13:25.000Z</published>
-    <updated>2017-02-24T09:14:27.000Z</updated>
+    <updated>2017-02-24T09:15:05.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="RunLoop"><a href="#RunLoop" class="headerlink" title="RunLoop"></a>RunLoop</h1><p>runloop是一个基础的设施，用来管理一个线程里异步到来的事件。runloop通过监控一个线程的一个或多个事件源来工作。当有事件到来的时候，系统就唤醒线程，然后把事件分发到runloop中，runloop会给事件分发到你指定的处理函数。如果没有事件需要处理，runloop就让线程休息。</p>
 <p>为线程启动一个runloop，可以让线程用非常少的资源来一直存活。如果这个线程要不定时处理一些任务，那么启动runloop是非常合适的。</p>
@@ -334,6 +334,8 @@
     
     </summary>
     
+    
+      <category term="iOS" scheme="https://xjshi.github.io/tags/iOS/"/>
     
   </entry>
   
