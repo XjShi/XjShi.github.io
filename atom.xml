@@ -339,4 +339,43 @@
     
   </entry>
   
+  <entry>
+    <title>instancetype</title>
+    <link href="https://xjshi.github.io/2015/02/28/instancetype/"/>
+    <id>https://xjshi.github.io/2015/02/28/instancetype/</id>
+    <published>2015-02-28T12:09:49.000Z</published>
+    <updated>2017-02-28T10:11:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在 OC 中，约定（convention）不仅仅是编码时的最佳时间，也是对编译器的隐式说明。</p>
+<p>比如，<code>alloc</code>和<code>init</code>都返回<code>id</code>类型，然而在 Xcode 中，编译器要做类型检查。这是怎么做到的？</p>
+<p>在 Cocoa 中，有这么个约定：像<code>alloc</code>、<code>init</code>这样的方法名，返回接受者类型的实例。这些方法叫做有一个关联的结果类型（related result type）。</p>
+<p>类的构造方法也返回<code>id</code>类型，但是却没有得到类型检查的益处，因为类构造方法没有遵从命名约定。</p>
+<p>看个例子：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[[[<span class="built_in">NSArray</span> alloc] init] mediaPlaybackAllowsAirPlay]; <span class="comment">// ❗ "No visible @interface for `NSArray` declares the selector `mediaPlaybackAllowsAirPlay`"</span></div><div class="line"></div><div class="line">[[<span class="built_in">NSArray</span> array] mediaPlaybackAllowsAirPlay]; <span class="comment">// (No error)</span></div></pre></td></tr></table></figure>
+<p>因为<code>alloc</code>和<code>init</code>遵从命名约定，类型检查返回<code>NSArray</code>执行后边的操作。然而，等价的类构造方法<code>array</code>不遵从约定，被解释为id类型。</p>
+<p><code>id</code>在不需要确保类型安全的情况下非常有用，但如果需要保证类型安全，<code>id</code>就没什么用了。</p>
+<p>有一个替代的方法，可以显式的声明返回类型（在前边的例子中是<code>NSArray</code>）。但是如果要子类化，这样写就不太好。</p>
+<p>这时编译器开始解决 OC 的类型系统的这种临界情况：</p>
+<p><code>instancetype</code>是一个上下文相关的关键字，可以用于返回类型来表示一个方法返回一个关联的结果类型。如：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Person</span></span></div><div class="line">+ (<span class="keyword">instancetype</span>)personWithName:(<span class="built_in">NSString</span> *)name;</div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>跟<code>id</code>类型不一样，<code>id</code>可以还可以用于函数参数，<code>instancetype</code>只能用于函数声明中的返回类型。</p>
+</blockquote>
+<p>使用<code>instancetype</code>，编辑器能正确的推断<code>+personWithName：</code>返回了一个<code>Person</code>的实例。</p>
+<p>译自：<a href="http://nshipster.com/instancetype/" target="_blank" rel="external">nshipster 的 instancetype</a> 一文。</p>
+<p>转载请注明出处：<a href="https://xjshi.github.io">https://xjshi.github.io</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在 OC 中，约定（convention）不仅仅是编码时的最佳时间，也是对编译器的隐式说明。&lt;/p&gt;
+&lt;p&gt;比如，&lt;code&gt;alloc&lt;/code&gt;和&lt;code&gt;init&lt;/code&gt;都返回&lt;code&gt;id&lt;/code&gt;类型，然而在 Xcode 中，编译器要做类型检查。这
+    
+    </summary>
+    
+    
+      <category term="Objective-C" scheme="https://xjshi.github.io/tags/Objective-C/"/>
+    
+  </entry>
+  
 </feed>
