@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xjshi.github.io/"/>
-  <updated>2016-12-21T05:40:26.000Z</updated>
+  <updated>2016-12-20T14:45:46.000Z</updated>
   <id>https://xjshi.github.io/</id>
   
   <author>
@@ -14,44 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>load vs. initialize</title>
-    <link href="https://xjshi.github.io/2016/12/21/load-vs-initialize/"/>
-    <id>https://xjshi.github.io/2016/12/21/load-vs-initialize/</id>
-    <published>2016-12-21T05:13:04.000Z</published>
-    <updated>2016-12-21T05:40:26.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>这篇文章来对比一下NSObject类的两个方法，<code>+load</code>与<code>+initialize</code>。</p>
-<h2 id="void-load"><a href="#void-load" class="headerlink" title="+ (void)load;"></a><code>+ (void)load;</code></h2><p>Invoked whenever a class or category is added to the Objective-C runtime; implement this method to perform class-specific behavior upon loading.</p>
-<p>不管一个类、类别是被动态加载或者静态链接，都会被发送load消息，但是只有新加入的类或者类别实现了这个方法，它才可以响应。</p>
-<p>The order of initialization is as follows:</p>
-<ol>
-<li>All initializers in any framework you link to.</li>
-<li>All <code>+load</code> methods in your image.</li>
-<li>All C++ static initializers and C/C++ <code>__attribute__(constructer)</code> functions in your image.</li>
-<li>All initializers in frameworks that link to you.</li>
-</ol>
-<p>注意：</p>
-<ul>
-<li>一个类的<code>+load</code>方法在他所有的父类之后调用；</li>
-<li>一个类别的<code>+load</code>方法，在类本身的<code>+load</code>之后调用。</li>
-</ul>
-<h2 id="void-initialize"><a href="#void-initialize" class="headerlink" title="+ (void)initialize;"></a><code>+ (void)initialize;</code></h2><p>运行时在每个类或者该类的子类被首次使用时，调用该方法。父类比子类先收到该消息。</p>
-<p>运行时以鲜橙安全给每个类发送<code>initialize</code>消息。这造成<code>initialize</code>会阻塞其他线程。所以，在<code>initialize</code>中只做必须的少量工作。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这篇文章来对比一下NSObject类的两个方法，&lt;code&gt;+load&lt;/code&gt;与&lt;code&gt;+initialize&lt;/code&gt;。&lt;/p&gt;
-&lt;h2 id=&quot;void-load&quot;&gt;&lt;a href=&quot;#void-load&quot; class=&quot;headerlink&quot; title
-    
-    </summary>
-    
-    
-      <category term="Objective-C" scheme="https://xjshi.github.io/tags/Objective-C/"/>
-    
-  </entry>
   
   <entry>
     <title>简单看了眼tinyfool经常提到的日历控件源代码</title>
@@ -888,6 +850,44 @@
     
     </summary>
     
+    
+  </entry>
+  
+  <entry>
+    <title>load vs. initialize</title>
+    <link href="https://xjshi.github.io/2015/10/21/load-vs-initialize/"/>
+    <id>https://xjshi.github.io/2015/10/21/load-vs-initialize/</id>
+    <published>2015-10-21T05:13:04.000Z</published>
+    <updated>2017-03-09T09:57:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>这篇文章来对比一下NSObject类的两个方法，<code>+load</code>与<code>+initialize</code>。</p>
+<h2 id="void-load"><a href="#void-load" class="headerlink" title="+ (void)load;"></a><code>+ (void)load;</code></h2><p>Invoked whenever a class or category is added to the Objective-C runtime; implement this method to perform class-specific behavior upon loading.</p>
+<p>不管一个类、类别是被动态加载或者静态链接，都会被发送load消息，但是只有新加入的类或者类别实现了这个方法，它才可以响应。</p>
+<p>The order of initialization is as follows:</p>
+<ol>
+<li>All initializers in any framework you link to.</li>
+<li>All <code>+load</code> methods in your image.</li>
+<li>All C++ static initializers and C/C++ <code>__attribute__(constructer)</code> functions in your image.</li>
+<li>All initializers in frameworks that link to you.</li>
+</ol>
+<p>注意：</p>
+<ul>
+<li>一个类的<code>+load</code>方法在他所有的父类之后调用；</li>
+<li>一个类别的<code>+load</code>方法，在类本身的<code>+load</code>之后调用。</li>
+</ul>
+<h2 id="void-initialize"><a href="#void-initialize" class="headerlink" title="+ (void)initialize;"></a><code>+ (void)initialize;</code></h2><p>运行时在每个类或者该类的子类被首次使用时，调用该方法。父类比子类先收到该消息。</p>
+<p>运行时以鲜橙安全给每个类发送<code>initialize</code>消息。这造成<code>initialize</code>会阻塞其他线程。所以，在<code>initialize</code>中只做必须的少量工作。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这篇文章来对比一下NSObject类的两个方法，&lt;code&gt;+load&lt;/code&gt;与&lt;code&gt;+initialize&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&quot;void-load&quot;&gt;&lt;a href=&quot;#void-load&quot; class=&quot;headerlink&quot; title
+    
+    </summary>
+    
+    
+      <category term="Objective-C" scheme="https://xjshi.github.io/tags/Objective-C/"/>
     
   </entry>
   

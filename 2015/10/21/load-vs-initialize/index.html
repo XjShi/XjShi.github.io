@@ -15,11 +15,11 @@
 + (void)load;Invoked whenever a class or category is added to the Objective-C runtime; implement this method to perform class-specific behavior upon loading.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="load vs. initialize">
-<meta property="og:url" content="https://xjshi.github.io/2016/12/21/load-vs-initialize/index.html">
+<meta property="og:url" content="https://xjshi.github.io/2015/10/21/load-vs-initialize/index.html">
 <meta property="og:site_name" content="land">
 <meta property="og:description" content="这篇文章来对比一下NSObject类的两个方法，+load与+initialize。
 + (void)load;Invoked whenever a class or category is added to the Objective-C runtime; implement this method to perform class-specific behavior upon loading.">
-<meta property="og:updated_time" content="2016-12-21T05:40:26.000Z">
+<meta property="og:updated_time" content="2017-03-09T09:57:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="load vs. initialize">
 <meta name="twitter:description" content="这篇文章来对比一下NSObject类的两个方法，+load与+initialize。
@@ -47,7 +47,7 @@
 				<h1 class="site-name"><a href="/" title="land">land</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -65,7 +65,7 @@
  					
 					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" autocomplete="off" name="q" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" autocomplete="off" name="q" maxlength="20" placeholder="Search" />
 					</form>
 					
 					</li>
@@ -80,21 +80,21 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/12/21/load-vs-initialize/" title="load vs. initialize" itemprop="url">load vs. initialize</a>
+      <a href="/2015/10/21/load-vs-initialize/" title="load vs. initialize" itemprop="url">load vs. initialize</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="ebebya" target="_blank" itemprop="author">ebebya</a>
 		
   <p class="article-time">
-    <time datetime="2016-12-21T05:13:04.000Z" itemprop="datePublished"> 發表於 2016-12-21</time>
+    <time datetime="2015-10-21T05:13:04.000Z" itemprop="datePublished"> Published 2015-10-21</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
+			<strong class="toc-title">Contents</strong>
 		
 			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#void-load"><span class="toc-number">1.</span> <span class="toc-text">+ (void)load;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#void-initialize"><span class="toc-number">2.</span> <span class="toc-text">+ (void)initialize;</span></a></li></ol>
 		
@@ -134,7 +134,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://xjshi.github.io/2016/12/21/load-vs-initialize/" data-title="load vs. initialize | land" data-tsina="2199757565" class="share clearfix">
+	  <div data-url="https://xjshi.github.io/2015/10/21/load-vs-initialize/" data-title="load vs. initialize | land" data-tsina="2199757565" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -147,11 +147,19 @@
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2016/02/28/2015-2016/" title="&lt;/2015&gt;&lt;2016&gt;">
+  <strong>上一篇：</strong><br/>
+  <span>
+  &lt;/2015&gt;&lt;2016&gt;</span>
+</a>
+</div>
+
 
 <div class="next">
-<a href="/2016/11/27/简单看了眼tinyfool经常提到的日历控件源代码/"  title="简单看了眼tinyfool经常提到的日历控件源代码">
+<a href="/2015/09/30/iOS-中关于字符串的一些问题/"  title="iOS 中关于字符串的一些问题">
  <strong>下一篇：</strong><br/> 
- <span>简单看了眼tinyfool经常提到的日历控件源代码
+ <span>iOS 中关于字符串的一些问题
 </span>
 </a>
 </div>
@@ -160,22 +168,22 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2016/12/21/load-vs-initialize/" data-title="load vs. initialize" data-url="https://xjshi.github.io/2016/12/21/load-vs-initialize/"></div>
+	<div class="ds-thread" data-thread-key="2015/10/21/load-vs-initialize/" data-title="load vs. initialize" data-url="https://xjshi.github.io/2015/10/21/load-vs-initialize/"></div>
 </section>
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
+  <strong class="toc-title">Contents</strong>
  
  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#void-load"><span class="toc-number">1.</span> <span class="toc-text">+ (void)load;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#void-initialize"><span class="toc-number">2.</span> <span class="toc-text">+ (void)initialize;</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
@@ -185,7 +193,7 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">標簽</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
@@ -213,7 +221,7 @@
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -229,7 +237,7 @@
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
 </aside>
@@ -456,7 +464,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
