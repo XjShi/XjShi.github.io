@@ -40,7 +40,7 @@
 				<h1 class="site-name"><a href="/" title="land">land</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -58,7 +58,7 @@
  					
 					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" autocomplete="off" name="q" maxlength="20" placeholder="Search" />
+						<input type="search" id="search" autocomplete="off" name="q" maxlength="20" placeholder="搜索" />
 					</form>
 					
 					</li>
@@ -68,28 +68,6 @@
     </header>
     <div id="container">
       <div id="main">
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2017/01/01/2016-2017/" title="&lt;/2016&gt;&lt;2017&gt;" itemprop="url">
-  
-    <h1 itemprop="name">&lt;/2016&gt;&lt;2017&gt;</h1>
-    
-     
-           <p itemprop="description" >2015年的总结
-
-16年过完春节，当时的工作没有什么挑战性，再加上想要更多的money，回到公司开完第一次例会，立刻就提了离职。然而，又一次挽留涨薪了。薪水满足了我的期望，再加上在这里干活，豹哥给了我充分的信任和支持，能够做自己喜欢的事情。于是，我就没有走。但今年离职是肯定的。</p>
-        
-    
-    <time datetime="2017-01-01T13:05:19.000Z" itemprop="datePublished">2017-01-01</time>
-  </a>
-</section>
-
-
-
-
-
 
   
 <section class="post" itemscope itemprop="blogitem">
@@ -138,20 +116,15 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/2016/08/22/iOS-中关于字符串的一些问题/" title="iOS 中关于字符串的一些问题" itemprop="url">
+    <a href="/2016/11/19/Swift-Enumerations/" title="Swift: Enumerations" itemprop="url">
   
-    <h1 itemprop="name">iOS 中关于字符串的一些问题</h1>
+    <h1 itemprop="name">Swift: Enumerations</h1>
     
      
-           <p itemprop="description" >本文是看Text Programming Guide for iOS的简单总结。
-先来一张图片看看排版中有关的概念。
-
-如何选择？UIKit、TextKit、CoreText。如何选择？ 
-大多数情况下，UIKit 可以满足你的需求。  
-在 UILabe、UITextField</p>
+           <p itemprop="description" >Enumerations in Swift are flexible, and do not have to provide a value for each case of the enumeration. If a value(known as “raw” value) if</p>
         
     
-    <time datetime="2016-08-22T06:08:09.000Z" itemprop="datePublished">2016-08-22</time>
+    <time datetime="2016-11-19T13:30:32.000Z" itemprop="datePublished">2016-11-19</time>
   </a>
 </section>
 
@@ -163,15 +136,16 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/2016/05/24/iOS中关于线程的一些点/" title="iOS中关于线程的一些点" itemprop="url">
+    <a href="/2016/11/11/Swift-Initialization-2/" title="Swift: Initialization-2" itemprop="url">
   
-    <h1 itemprop="name">iOS中关于线程的一些点</h1>
+    <h1 itemprop="name">Swift: Initialization-2</h1>
     
      
-           <p itemprop="description" >RunLooprunloop是一个基础的设施，用来管理一个线程里异步到来的事件。runloop通过监控一个线程的一个或多个事件源来工作。当有事件到来的时候，系统就唤醒线程，然后把事件分发到runloop中，runloop会给事件分发到你指定的处理函数。如果没有事件需要处理，run</p>
+           <p itemprop="description" >##Failable Initializers有的时候，可能是参数问题、需要的外部资源没有到位等原因，初始化可能失败。为了应对这种情况，我们可以定义一个或多个可失败的构造方法。 init？
+A failable initiazlier creates an optional va</p>
         
     
-    <time datetime="2016-05-24T12:13:25.000Z" itemprop="datePublished">2016-05-24</time>
+    <time datetime="2016-11-11T15:24:18.000Z" itemprop="datePublished">2016-11-11</time>
   </a>
 </section>
 
@@ -183,17 +157,16 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/2015/02/28/instancetype/" title="instancetype" itemprop="url">
+    <a href="/2016/11/11/Siwft-Initialization-1/" title="Siwft: Initialization-1" itemprop="url">
   
-    <h1 itemprop="name">instancetype</h1>
+    <h1 itemprop="name">Siwft: Initialization-1</h1>
     
      
-           <p itemprop="description" >在 OC 中，约定（convention）不仅仅是编码时的最佳时间，也是对编译器的隐式说明。
-比如，alloc和init都返回id类型，然而在 Xcode 中，编译器要做类型检查。这是怎么做到的？
-在 Cocoa 中，有这么个约定：像alloc、init这样的方法名，返回接受者类</p>
+           <p itemprop="description" >初始化的过程包括为每一个存储属性设置一个初始值和其他步骤。通过定义构造函数来实现初始化的过程，跟oc的初始化函数不同，Swift的构造函数不返回一个值。它们的主要角色是确保一个类型的实例在初次使用前被正确的初始化。
+类的实例也可以有析构函数，析构函数在类的实例在释放前完成一些清理</p>
         
     
-    <time datetime="2015-02-28T12:09:49.000Z" itemprop="datePublished">2015-02-28</time>
+    <time datetime="2016-11-11T10:12:05.000Z" itemprop="datePublished">2016-11-11</time>
   </a>
 </section>
 
@@ -202,12 +175,138 @@
 
 
 
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2016/11/11/Swift-Inheritance/" title="Swift: Inheritance" itemprop="url">
+  
+    <h1 itemprop="name">Swift: Inheritance</h1>
+    
+     
+           <p itemprop="description" >为了在属性值改变的时候获得通知，类可以为继承的属性添加属性观察者。属性观察者可以添加到任何属性上，不管这个属性原来是存储属性还是计算属性。
+Swift中的类没有一个统一的基类。
+为了讲明白继承，我们先来定义一个基类：
+123456789class Vehicle &amp;#123;  </p>
+        
+    
+    <time datetime="2016-11-11T09:17:38.000Z" itemprop="datePublished">2016-11-11</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2016/11/11/Swift-Subcripts/" title="Swift: Subcripts" itemprop="url">
+  
+    <h1 itemprop="name">Swift: Subcripts</h1>
+    
+     
+           <p itemprop="description" >类、结构体、枚举都可以定义下标（subscript），下标是访问集合、列表、序列的元素的快捷方式。
+在Swift中可以为类型定义下标，而且不限于一维。
+##语法下标定义的方法：跟实例方法的语法类似，subscript关键字，一个或多个输入参数，一个返回值。
+下标可以是可读可写的，</p>
+        
+    
+    <time datetime="2016-11-11T08:24:19.000Z" itemprop="datePublished">2016-11-11</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2016/11/10/Swift-Classes-and-Structures/" title="Swift: Classes and Structures" itemprop="url">
+  
+    <h1 itemprop="name">Swift: Classes and Structures</h1>
+    
+     
+           <p itemprop="description" >##对比类与结构体类与结构体有许多的相同点，它们都可以：  
+
+定义属性来存储值；
+定义方法来提供功能；
+定义下标操作；
+定义初始化函数；
+扩展它的默认的实现；
+遵从协议；
+
+类有一些额外的能力，但是结构体没有：
+
+继承；
+类型转换可以让你在运行时check、interpret类</p>
+        
+    
+    <time datetime="2016-11-10T14:09:01.000Z" itemprop="datePublished">2016-11-10</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2016/11/10/Swift-Methods/" title="Swift: Methods" itemprop="url">
+  
+    <h1 itemprop="name">Swift: Methods</h1>
+    
+     
+           <p itemprop="description" >这里的“方法”指的是跟特定类型有关系的函数。
+方法包括实例方法(Instance Method)和类型方法(Type Method)。实例方法可以访问所有该类型所有其他的实例方法和属性。
+##实例方法
+###在实例方法中修改值类型的数据(Modifying Value Types</p>
+        
+    
+    <time datetime="2016-11-10T07:50:09.000Z" itemprop="datePublished">2016-11-10</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2016/11/09/Swift-Properties/" title="Swift: Properties" itemprop="url">
+  
+    <h1 itemprop="name">Swift: Properties</h1>
+    
+     
+           <p itemprop="description" >属性常与类、结构体、枚举联系在一起。stored properties存储常量值、变量值，而computed properties计算一个值。类、结构体、枚举都可以有computed property，但是只有类与结构体可以有stored property。
+##Stored P</p>
+        
+    
+    <time datetime="2016-11-09T15:30:55.000Z" itemprop="datePublished">2016-11-09</time>
+  </a>
+</section>
+
+
+
+
+
+
+
+  <nav id="page-nav" class="clearfix unexpand">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
+  </nav>
 
 </div>
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
 <aside class="clearfix">
 
   
@@ -217,15 +316,23 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">Tags</p>
+	<p class="asidetitle">標簽</p>
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/iOS/" title="iOS">iOS<sup>2</sup></a></li>
+				<li><a href="/tags/Swift/" title="Swift">Swift<sup>13</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Objective-C/" title="Objective-C">Objective-C<sup>2</sup></a></li>
+				<li><a href="/tags/iOS/" title="iOS">iOS<sup>10</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Objective-C/" title="Objective-C">Objective-C<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Go/" title="Go">Go<sup>1</sup></a></li>
 			
 		
 			
@@ -237,7 +344,7 @@
 
 
   <div class="linkslist">
-  <p class="asidetitle">Links</p>
+  <p class="asidetitle">友情鏈接</p>
     <ul>
         
           <li>
@@ -253,7 +360,7 @@
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
 </div>
 
 </aside>
@@ -391,7 +498,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
