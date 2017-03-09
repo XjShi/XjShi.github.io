@@ -4,28 +4,41 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>自定义 TabBar 之理解 hittest | land</title>
+    <title>What is new in iOS 10 | land</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="ebebya">
     
 
     
-    <meta name="description" content="需求的TabBar是这样的：5个 tabItem， 中间的那个 item 部分超出系统默认TabBar的上边界。
-那么实现的关键点就是如何在点击它突出的部分的时候，也可以正常获得响应。我来把问题简化，我把下图中的红色的视图（类型为RedView，继承自UIView）称为 redview，蓝色的视图（类型为BlueView，继承自UIView）称为 blueview。redview 添加在试图控制器">
+    <meta name="description" content="个人认为 iOS 10 是 iOS 7 之后最大的改版，刚装上测试版的时候，感觉是新奇又有一点不适应。
+下面主要来看一下开发者需要关心的部分。
+Providing Haptic Feedback主要是体现在 iPhone 7 和 iPhone 7 Plus 两款设备上。为此，UIKit中引入了UIFeedbackGenerator这个类和三个子类，这些类能让触觉对特定的场景更加合适。
+
+
+
+类名">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自定义 TabBar 之理解 hittest">
-<meta property="og:url" content="https://xjshi.github.io/2015/05/03/自定义-TabBar-之理解-hittest/index.html">
+<meta property="og:title" content="What is new in iOS 10">
+<meta property="og:url" content="https://xjshi.github.io/2016/06/18/What-is-new-in-iOS-10/index.html">
 <meta property="og:site_name" content="land">
-<meta property="og:description" content="需求的TabBar是这样的：5个 tabItem， 中间的那个 item 部分超出系统默认TabBar的上边界。
-那么实现的关键点就是如何在点击它突出的部分的时候，也可以正常获得响应。我来把问题简化，我把下图中的红色的视图（类型为RedView，继承自UIView）称为 redview，蓝色的视图（类型为BlueView，继承自UIView）称为 blueview。redview 添加在试图控制器">
-<meta property="og:image" content="https://xjshi.github.io/2015/05/03/自定义-TabBar-之理解-hittest/red-blue.png">
-<meta property="og:updated_time" content="2017-03-09T07:58:03.000Z">
+<meta property="og:description" content="个人认为 iOS 10 是 iOS 7 之后最大的改版，刚装上测试版的时候，感觉是新奇又有一点不适应。
+下面主要来看一下开发者需要关心的部分。
+Providing Haptic Feedback主要是体现在 iPhone 7 和 iPhone 7 Plus 两款设备上。为此，UIKit中引入了UIFeedbackGenerator这个类和三个子类，这些类能让触觉对特定的场景更加合适。
+
+
+
+类名">
+<meta property="og:updated_time" content="2017-03-09T16:18:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自定义 TabBar 之理解 hittest">
-<meta name="twitter:description" content="需求的TabBar是这样的：5个 tabItem， 中间的那个 item 部分超出系统默认TabBar的上边界。
-那么实现的关键点就是如何在点击它突出的部分的时候，也可以正常获得响应。我来把问题简化，我把下图中的红色的视图（类型为RedView，继承自UIView）称为 redview，蓝色的视图（类型为BlueView，继承自UIView）称为 blueview。redview 添加在试图控制器">
-<meta name="twitter:image" content="https://xjshi.github.io/2015/05/03/自定义-TabBar-之理解-hittest/red-blue.png">
+<meta name="twitter:title" content="What is new in iOS 10">
+<meta name="twitter:description" content="个人认为 iOS 10 是 iOS 7 之后最大的改版，刚装上测试版的时候，感觉是新奇又有一点不适应。
+下面主要来看一下开发者需要关心的部分。
+Providing Haptic Feedback主要是体现在 iPhone 7 和 iPhone 7 Plus 两款设备上。为此，UIKit中引入了UIFeedbackGenerator这个类和三个子类，这些类能让触觉对特定的场景更加合适。
+
+
+
+类名">
 
     
     <link rel="alternative" href="/atom.xml" title="land" type="application/atom+xml">
@@ -82,14 +95,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/05/03/自定义-TabBar-之理解-hittest/" title="自定义 TabBar 之理解 hittest" itemprop="url">自定义 TabBar 之理解 hittest</a>
+      <a href="/2016/06/18/What-is-new-in-iOS-10/" title="What is new in iOS 10" itemprop="url">What is new in iOS 10</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="ebebya" target="_blank" itemprop="author">ebebya</a>
 		
   <p class="article-time">
-    <time datetime="2015-05-03T02:23:16.000Z" itemprop="datePublished"> Published 2015-05-03</time>
+    <time datetime="2016-06-18T12:12:04.000Z" itemprop="datePublished"> Published 2016-06-18</time>
     
   </p>
 </header>
@@ -98,26 +111,70 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Providing-Haptic-Feedback"><span class="toc-number">1.</span> <span class="toc-text">Providing Haptic Feedback</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SirtKit"><span class="toc-number">2.</span> <span class="toc-text">SirtKit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iMessage-App"><span class="toc-number">3.</span> <span class="toc-text">iMessage App</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语音识别"><span class="toc-number">4.</span> <span class="toc-text">语音识别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CallKit"><span class="toc-number">5.</span> <span class="toc-text">CallKit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#User-Notifications"><span class="toc-number">6.</span> <span class="toc-text">User Notifications</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#App-Extensions"><span class="toc-number">7.</span> <span class="toc-text">App Extensions</span></a></li></ol>
 		
 		</div>
 		
-		<p>需求的TabBar是这样的：5个 tabItem， 中间的那个 item 部分超出系统默认TabBar的上边界。</p>
-<p>那么实现的关键点就是如何在点击它突出的部分的时候，也可以正常获得响应。我来把问题简化，我把下图中的红色的视图（类型为<code>RedView</code>，继承自<code>UIView</code>）称为 redview，蓝色的视图（类型为<code>BlueView</code>，继承自<code>UIView</code>）称为 blueview。redview 添加在试图控制器的视图上，blueview 添加在 redview上。</p>
-<img src="/2015/05/03/自定义-TabBar-之理解-hittest/red-blue.png" alt="red-blue.png" title="">
-<p>在 RedView 和 BlueView 的<code>- (UIView *)hitTest:withEvent:</code>方法和<code>- (void)touchesBegan:withEvent:</code>都保持默认实现的情况下，点击 blueview 超出 redview 的部分，两个视图的<code>- (void)touchesBegan:withEvent:</code>均不执行。</p>
-<p>下面我来改造一下 RedView 的<code>- (UIView *)hitTest:withEvent:</code>方法，如下：</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">UIView</span> *)hitTest:(<span class="built_in">CGPoint</span>)point withEvent:(<span class="built_in">UIEvent</span> *)event &#123;</div><div class="line">    <span class="built_in">UIView</span> *view = [<span class="keyword">super</span> hitTest:point withEvent:event];</div><div class="line">    <span class="built_in">UIView</span> *blueview = <span class="keyword">self</span>.subviews.firstObject;</div><div class="line">    <span class="keyword">if</span> (<span class="built_in">CGRectContainsPoint</span>(blueview.frame, point)) &#123;</div><div class="line">        <span class="keyword">return</span> blueview;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> view;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这样重写以后，再点击上边说的那部分， RedView 的 hittesst 就会把 blueview 作为 hittest view，因此会执行到 blueview 的<code>- (void)touchesBegan:withEvent:</code>方法。</p>
-<p>为什么会这样？</p>
-<p>我们可以看一下<code>- (UIView *)hitTest:withEvent:</code>的说明(读原文吧，比我描述的清楚)：</p>
-<blockquote>
-<p>This method traverses the view hierarchy by calling the pointInside:withEvent: method of each subview to determine which subview should receive a touch event. If pointInside:withEvent: returns YES, then the subview’s hierarchy is similarly traversed until the frontmost view containing the specified point is found. If a view does not contain the point, its branch of the view hierarchy is ignored. You rarely need to call this method yourself, but you might override it to hide touch events from subviews.</p>
-<p>This method ignores view objects that are hidden, that have disabled user interactions, or have an alpha level less than 0.01. This method does not take the view’s content into account when determining a hit. Thus, a view can still be returned even if the specified point is in a transparent portion of that view’s content.</p>
-<p>Points that lie outside the receiver’s bounds are never reported as hits, even if they actually lie within one of the receiver’s subviews. This can occur if the current view’s clipsToBounds property is set to NO and the affected subview extends beyond the view’s bounds.</p>
-</blockquote>
-<p>想要跟深入的了解这部分内容，可以阅读 Response Chain 相关的文档。这里贴上地址：<a href="https://developer.apple.com/library/content/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/event_delivery_responder_chain/event_delivery_responder_chain.html" target="_blank" rel="external">https://developer.apple.com/library/content/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/event_delivery_responder_chain/event_delivery_responder_chain.html</a></p>
-<p>到这里如何定义需求中的Tabbar怎么实现就很明显了。直接放个Button在中间就好了，然后调整其他四个TabItem的位置。</p>
+		<p>个人认为 iOS 10 是 iOS 7 之后最大的改版，刚装上测试版的时候，感觉是新奇又有一点不适应。</p>
+<p>下面主要来看一下开发者需要关心的部分。</p>
+<h2 id="Providing-Haptic-Feedback"><a href="#Providing-Haptic-Feedback" class="headerlink" title="Providing Haptic Feedback"></a>Providing Haptic Feedback</h2><p>主要是体现在 iPhone 7 和 iPhone 7 Plus 两款设备上。为此，<code>UIKit</code>中引入了<code>UIFeedbackGenerator</code>这个类和三个子类，这些类能让触觉对特定的场景更加合适。</p>
+<table>
+<thead>
+<tr>
+<th>类名</th>
+<th>使用示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UIImpactFeedbackGenerator</td>
+<td>对完成一个功能或任务的视觉反馈提供一个物理的体验。比如，一个视图滑到指定位置时，或者两个对象碰撞时，用户可能感到砰地一声。</td>
+</tr>
+<tr>
+<td>UINotificationFeedbackGenerator</td>
+<td>比如，存入支票、解锁汽车这样的任务（功能）完成、失败或者产生某种类型的警告。</td>
+</tr>
+<tr>
+<td>UISelectionFeedbackGenerator</td>
+<td>暗示选择在积极得改变。例如，用户轻触一个滚动的picker。</td>
+</tr>
+</tbody>
+</table>
+<p>使用的时候，让系统对指定的场景生成触感（haptic），然后 iOS 会给予场景管理反馈的强度和行为。</p>
+<h2 id="SirtKit"><a href="#SirtKit" class="headerlink" title="SirtKit"></a>SirtKit</h2><p>SiriKit 让特定领域的应用可以通过 iOS 中的 Siri 来使用服务。如果应用要接入的话，需要通过 Intents Extension来实现。目前 SiriKit 支持下面这几种领域：</p>
+<ul>
+<li>语音通话、视频通话</li>
+<li>短信息</li>
+<li>支付、接收付款</li>
+<li>搜索照片</li>
+<li>约车</li>
+<li>训练管理</li>
+<li><del>car play(automotive vendors only)<del></del></del></li>
+<li><del>餐馆预订（需要苹果的额外支持）<del></del></del></li>
+</ul>
+<h2 id="iMessage-App"><a href="#iMessage-App" class="headerlink" title="iMessage App"></a>iMessage App</h2><p>iOS 10 中，可以通过开发应用扩展来来 Messages 这个应用中发送文本，表情，多媒体文件，甚至是可交互的消息。</p>
+<p>可以开发两种类型的应用扩展：</p>
+<ul>
+<li>Sticker pack： 提供一组可以在 Messages 应用中使用的表情。</li>
+<li>iMessage app： 可以在 Messages 应用中展现自定义的用户交互。</li>
+</ul>
+<p>开发 Sticker pack 不需要写然和代码，只要把图片拖到 asset 目录中就可以了。<br>开发 iMessage app 需要 Message 框架中的相关 API。</p>
+<h2 id="语音识别"><a href="#语音识别" class="headerlink" title="语音识别"></a>语音识别</h2><p>iOS 10 引入了新的 API 来支持语音识别，并可以转为为子。通过 Speech 框架中的相关 API，即可以进行实时转换，也可以从录音文件中转换。</p>
+<h2 id="CallKit"><a href="#CallKit" class="headerlink" title="CallKit"></a>CallKit</h2><p>对 VoIP 应用是一大福音，同时也能够满足 iOS 用户期待已久的功能—-知道呼入者是快递，还是房产中介。腾讯手机管家已经通过 CallKit 实现了后边描述的这个功能。</p>
+<h2 id="User-Notifications"><a href="#User-Notifications" class="headerlink" title="User Notifications"></a>User Notifications</h2><p>iOS 10 之前，设备收到通知时，只能选择清除或者通过通知打开应用。iOS 10 引入了 UserNotification 框架，支持分发、处理应用。应用可以使用这个框架来接收或者在设备收到通知时悄悄的改变通知。</p>
+<p>iOS 10 同时也引入了 UserNotificationsUI 框架，能让你通过扩展自定义通过的外观。</p>
+<h2 id="App-Extensions"><a href="#App-Extensions" class="headerlink" title="App Extensions"></a>App Extensions</h2><p>iOS 10 引入了一些新玩意，以便创建应用扩展，千遍已经提到了一些，这里再次列举一下：</p>
+<ul>
+<li>Call Directory</li>
+<li>Intents</li>
+<li>Intents UI</li>
+<li>Messages</li>
+<li>Notification Content</li>
+<li>Notification Service</li>
+<li>Sticker Pack</li>
+</ul>
+<p>到这里 iOS 10 新增的部分基本介绍完了，除了这些，iOS 10 还对已有的部分框架做了增强，可自行到苹果开发者网站查阅。</p>
+<p>iOS 9.3 到 iOS 10 的 API 变化可以看这里：<a href="https://developer.apple.com/library/content/releasenotes/General/iOS10APIDiffs/index.html" target="_blank" rel="external">https://developer.apple.com/library/content/releasenotes/General/iOS10APIDiffs/index.html</a></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -135,7 +192,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="https://xjshi.github.io/2015/05/03/自定义-TabBar-之理解-hittest/" data-title="自定义 TabBar 之理解 hittest | land" data-tsina="2199757565" class="share clearfix">
+	  <div data-url="https://xjshi.github.io/2016/06/18/What-is-new-in-iOS-10/" data-title="What is new in iOS 10 | land" data-tsina="2199757565" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -149,18 +206,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/06/30/使用-Quartz-2D-擦除图片/" title="使用 Quartz 2D 擦除图片">
+ <a href="/2016/11/08/Swift的闭包（二）：捕获值/" title="Swift的闭包（二）：捕获值">
   <strong>上一篇：</strong><br/>
   <span>
-  使用 Quartz 2D 擦除图片</span>
+  Swift的闭包（二）：捕获值</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/04/04/Event-Delivery-The-Responder-Chain/"  title="Event Delivery: The Responder Chain">
+<a href="/2016/04/21/Core-Bluetooth/"  title="Core Bluetooth">
  <strong>下一篇：</strong><br/> 
- <span>Event Delivery: The Responder Chain
+ <span>Core Bluetooth
 </span>
 </a>
 </div>
@@ -169,7 +226,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/05/03/自定义-TabBar-之理解-hittest/" data-title="自定义 TabBar 之理解 hittest" data-url="https://xjshi.github.io/2015/05/03/自定义-TabBar-之理解-hittest/"></div>
+	<div class="ds-thread" data-thread-key="2016/06/18/What-is-new-in-iOS-10/" data-title="What is new in iOS 10" data-url="https://xjshi.github.io/2016/06/18/What-is-new-in-iOS-10/"></div>
 </section>
 
 
@@ -179,7 +236,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Providing-Haptic-Feedback"><span class="toc-number">1.</span> <span class="toc-text">Providing Haptic Feedback</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SirtKit"><span class="toc-number">2.</span> <span class="toc-text">SirtKit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iMessage-App"><span class="toc-number">3.</span> <span class="toc-text">iMessage App</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语音识别"><span class="toc-number">4.</span> <span class="toc-text">语音识别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CallKit"><span class="toc-number">5.</span> <span class="toc-text">CallKit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#User-Notifications"><span class="toc-number">6.</span> <span class="toc-text">User Notifications</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#App-Extensions"><span class="toc-number">7.</span> <span class="toc-text">App Extensions</span></a></li></ol>
  
   </div>
 
