@@ -47,7 +47,7 @@
 				<h1 class="site-name"><a href="/" title="land">land</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -65,7 +65,7 @@
  					
 					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" autocomplete="off" name="q" maxlength="20" placeholder="Search" />
+						<input type="search" id="search" autocomplete="off" name="q" maxlength="20" placeholder="搜索" />
 					</form>
 					
 					</li>
@@ -87,14 +87,14 @@
 		<a href="/about" title="ebebya" target="_blank" itemprop="author">ebebya</a>
 		
   <p class="article-time">
-    <time datetime="2015-09-24T12:13:25.000Z" itemprop="datePublished"> Published 2015-09-24</time>
+    <time datetime="2015-09-24T12:13:25.000Z" itemprop="datePublished"> 发表于 2015-09-24</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
+			<strong class="toc-title">文章目录</strong>
 		
 			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RunLoop"><span class="toc-number">1.</span> <span class="toc-text">RunLoop</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#同步工具"><span class="toc-number">2.</span> <span class="toc-text">同步工具</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Lock"><span class="toc-number">2.1.</span> <span class="toc-text">Lock</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Condition"><span class="toc-number">2.2.</span> <span class="toc-text">Condition</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在同一个线程中执行"><span class="toc-number">2.3.</span> <span class="toc-text">在同一个线程中执行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Atomic"><span class="toc-number">2.4.</span> <span class="toc-text">Atomic</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存隔离和Volatile变量"><span class="toc-number">2.5.</span> <span class="toc-text">内存隔离和Volatile变量</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#线程安全设计的几个建议"><span class="toc-number">3.</span> <span class="toc-text">线程安全设计的几个建议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#避免完全同步"><span class="toc-number">3.1.</span> <span class="toc-text">避免完全同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#理解同步的限制"><span class="toc-number">3.2.</span> <span class="toc-text">理解同步的限制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#明白可能存在的威胁"><span class="toc-number">3.3.</span> <span class="toc-text">明白可能存在的威胁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小心死锁、活锁"><span class="toc-number">3.4.</span> <span class="toc-text">小心死锁、活锁</span></a></li></ol></li></ol>
 		
@@ -215,17 +215,17 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
+  <strong class="toc-title">文章目录</strong>
  
  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RunLoop"><span class="toc-number">1.</span> <span class="toc-text">RunLoop</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#同步工具"><span class="toc-number">2.</span> <span class="toc-text">同步工具</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Lock"><span class="toc-number">2.1.</span> <span class="toc-text">Lock</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Condition"><span class="toc-number">2.2.</span> <span class="toc-text">Condition</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在同一个线程中执行"><span class="toc-number">2.3.</span> <span class="toc-text">在同一个线程中执行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Atomic"><span class="toc-number">2.4.</span> <span class="toc-text">Atomic</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存隔离和Volatile变量"><span class="toc-number">2.5.</span> <span class="toc-text">内存隔离和Volatile变量</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#线程安全设计的几个建议"><span class="toc-number">3.</span> <span class="toc-text">线程安全设计的几个建议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#避免完全同步"><span class="toc-number">3.1.</span> <span class="toc-text">避免完全同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#理解同步的限制"><span class="toc-number">3.2.</span> <span class="toc-text">理解同步的限制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#明白可能存在的威胁"><span class="toc-number">3.3.</span> <span class="toc-text">明白可能存在的威胁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小心死锁、活锁"><span class="toc-number">3.4.</span> <span class="toc-text">小心死锁、活锁</span></a></li></ol></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
 <aside class="clearfix">
 
   
@@ -235,7 +235,7 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">Tags</p>
+	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
 		
 			
@@ -243,7 +243,7 @@
 			
 		
 			
-				<li><a href="/tags/iOS/" title="iOS">iOS<sup>11</sup></a></li>
+				<li><a href="/tags/iOS/" title="iOS">iOS<sup>12</sup></a></li>
 			
 		
 			
@@ -263,7 +263,7 @@
 
 
   <div class="linkslist">
-  <p class="asidetitle">Links</p>
+  <p class="asidetitle">友情链接</p>
     <ul>
         
           <li>
@@ -279,7 +279,7 @@
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
 </div>
 
 </aside>
@@ -506,7 +506,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
