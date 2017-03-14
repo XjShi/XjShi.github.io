@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xjshi.github.io/"/>
-  <updated>2017-03-12T06:18:30.000Z</updated>
+  <updated>2016-12-20T14:45:46.000Z</updated>
   <id>https://xjshi.github.io/</id>
   
   <author>
@@ -14,83 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>用户体验之音频</title>
-    <link href="https://xjshi.github.io/2017/03/12/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C%E4%B9%8B%E9%9F%B3%E9%A2%91/"/>
-    <id>https://xjshi.github.io/2017/03/12/用户体验之音频/</id>
-    <published>2017-03-12T06:12:07.000Z</published>
-    <updated>2017-03-12T06:18:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
-<p>早期某知名公司的应用有这么一个问题，如果我在听音乐时打开该应用，播放一段小视频，视频播放完成之后，音乐没有继续播放。这个问题被很多用户吐槽，很久以后，该公司终于修复了这个问题。</p>
-</blockquote>
-<p>无论声音是应用体验的重要部分，还是作为润色，你都应该知道用户期待声音又怎样的行为。</p>
-<p>用户可以通过音量键、静音开关、耳机，以及音量滑条来控制声音，一些第三方的附件也可以控制声音。音频可以通过内部或外接的扬声器、耳机来输出，甚至是无线的 AirPlay 设备或 蓝牙设备。</p>
-<ul>
-<li>静音（Silence）。静音的情况下，用户希望不被意外的声音打扰，比如来电铃声、信息铃声、以及各种不重要的声音，比如，按键声、游戏配音、其他的听觉反馈等。用户只期待明确开始的声音，比如多媒体播放、闹钟、音频或视频信息。</li>
-<li>音量（Volume）。当用户使用手机上的物理按键或屏幕上的音量滑条来调节声音时，用户期待这个调整可以在系统层面影响所有的声音，包括音乐播放、应用内声音。唯一的例外是铃音音量（ringer volume），铃音音量总是在没有音频播放的时候单独调节。</li>
-<li>耳机（Headphone）。当用户插入耳机的时候，希望声音能自动切换线路（route）。当拔掉耳机的时候，期待播放暂停。</li>
-</ul>
-<p><strong>必要时可自动调节音量（不是总体的音量）</strong>。应用可以调节相对独立的音量来实现想要的效果。然而，最终的输出应该总是受系统音量控制。</p>
-<p><strong>合适的时候重新选择线路</strong>。比如，你家的客厅有立体声系统，又有 Apple TV。那你应该支持在这些中间切换，除非是特殊原因。</p>
-<p><strong>使用系统提供的音量视图来允许音量调节</strong>。调节音量时，提供一个界面控件无疑是很好的。iOS 系统为我们提供了<code>MPVolumeView</code>（<a href="https://developer.apple.com/reference/mediaplayer/mpvolumeview" target="_blank" rel="external">点击查看详情</a>）。</p>
-<p><strong>为短声和震动，使用系统声音服务</strong>。这个指的是<code>AudioToolbox</code>（<a href="https://developer.apple.com/reference/audiotoolbox/system_sound_services" target="_blank" rel="external">System Sound Services</a>）。</p>
-<p><strong>如果你的应用必须使用声音，那么给音频归类</strong>。实际上指的是<code>AVAudioSession</code>的 category，当其值不同，表现也不同。具体看下表：</p>
-<table>
-<thead>
-<tr>
-<th>category</th>
-<th>含义</th>
-<th>表现</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Solo ambient</td>
-<td>声音不是必须的（essential），但是它会静默其他音频。比如，带有配乐的游戏。</td>
-<td>1.受静音开关控制。2.不和其他声音混合（mix）。3.应用在后台时不播放。</td>
-</tr>
-<tr>
-<td>Ambient</td>
-<td>声音不是必须的，并且不会静默其他音频。比如，一个游戏应用可以让用户在玩游戏时播放另一个应用中的音乐，来替代游戏的配乐。</td>
-<td>1.受静音开关控制。2.和其他声音混合。3.应用在后台时不播放。</td>
-</tr>
-<tr>
-<td>Playback</td>
-<td>声音是必须的，并且跟其他声音混合。比如，语音电子书应用，用户可能想在离开应用后，仍然可以听。</td>
-<td>1.不受静音开关控制。2.可能混合，也可能不混合其他声音。3.可以在后台播放。</td>
-</tr>
-<tr>
-<td>Record</td>
-<td>录音。比如，语音备忘录这类应用。</td>
-<td>不受静音开关控制。2.不和其他声音混合。3.可以在后台录音。</td>
-</tr>
-<tr>
-<td>Play and Record</td>
-<td>声音可能同时被录制和播放。例如，一个语音信息应用。</td>
-<td>1.不受静音开关控制。2.可能混合，也可能不混合其他声音。3.可以在后台录制或播放。</td>
-</tr>
-</tbody>
-</table>
-<p><strong>被打断以后，在合适的时间继续播放</strong>。有时候，当前播放的音频可能被另一个应用打断。临时打断可以重新开始，比如打进来的电话。永久打断不能重新开始，比如由 Siri 开始的音乐播放列表。</p>
-<p><strong>在你的应用结束一段临时的语音播放时，让其他应用知道</strong>。如果你的应用可能会临时打断其他应用的音频，你应该在合适的时候让其他应用可以安全的重新开始时得到通知。实现细节可以看这里：<a href="https://developer.apple.com/reference/avfoundation/avaudiosessionsetactiveoptions/avaudiosessionsetactiveoptionnotifyothersondeactivation" target="_blank" rel="external">AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation</a>。</p>
-<p><strong>不要重新调整音频附件</strong>。人们希望在所有的应用中，音频附件的行为一致。一定不要重新定义一个语音附件的意义。如果你的应用不支持某种附件，不响应它就好了。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;早期某知名公司的应用有这么一个问题，如果我在听音乐时打开该应用，播放一段小视频，视频播放完成之后，音乐没有继续播放。这个问题被很多用户吐槽，很久以后，该公司终于修复了这个问题。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;无论声音是应用体验的重要部分
-    
-    </summary>
-    
-    
-      <category term="iOS" scheme="https://xjshi.github.io/tags/iOS/"/>
-    
-  </entry>
   
   <entry>
     <title>简单看了眼tinyfool经常提到的日历控件源代码</title>
@@ -763,6 +686,83 @@
     
     
       <category term="Swift" scheme="https://xjshi.github.io/tags/Swift/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用户体验之音频</title>
+    <link href="https://xjshi.github.io/2016/07/08/%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C%E4%B9%8B%E9%9F%B3%E9%A2%91/"/>
+    <id>https://xjshi.github.io/2016/07/08/用户体验之音频/</id>
+    <published>2016-07-08T11:34:07.000Z</published>
+    <updated>2017-03-14T14:02:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>早期某知名公司的应用有这么一个问题，如果我在听音乐时打开该应用，播放一段小视频，视频播放完成之后，音乐没有继续播放。这个问题被很多用户吐槽，很久以后，该公司终于修复了这个问题。</p>
+</blockquote>
+<p>无论声音是应用体验的重要部分，还是作为润色，你都应该知道用户期待声音有怎样的行为。</p>
+<p>用户可以通过音量键、静音开关、耳机，以及音量滑条来控制声音，一些第三方的附件也可以控制声音。音频可以通过内部或外接的扬声器、耳机来输出，甚至是无线的 AirPlay 设备或 蓝牙设备。</p>
+<ul>
+<li>静音（Silence）。静音的情况下，用户希望不被意外的声音打扰，比如来电铃声、信息铃声、以及各种不重要的声音，比如，按键声、游戏配音、其他的听觉反馈等。用户只期待明确开始的声音，比如多媒体播放、闹钟、音频或视频信息。</li>
+<li>音量（Volume）。当用户使用手机上的物理按键或屏幕上的音量滑条来调节声音时，用户期待这个调整可以在系统层面影响所有的声音，包括音乐播放、应用内声音。唯一的例外是铃音音量（ringer volume），铃音音量总是在没有音频播放的时候单独调节。</li>
+<li>耳机（Headphone）。当用户插入耳机的时候，希望声音能自动切换线路（route）。当拔掉耳机的时候，期待播放暂停。</li>
+</ul>
+<p><strong>必要时可自动调节音量（不是总体的音量）</strong>。应用可以调节相对独立的音量来实现想要的效果。然而，最终的输出应该总是受系统音量控制。</p>
+<p><strong>合适的时候重新选择线路</strong>。比如，你家的客厅有立体声系统，又有 Apple TV。那你应该支持在这些中间切换，除非是特殊原因。</p>
+<p><strong>使用系统提供的音量视图来允许音量调节</strong>。调节音量时，提供一个界面控件无疑是很好的。iOS 系统为我们提供了<code>MPVolumeView</code>（<a href="https://developer.apple.com/reference/mediaplayer/mpvolumeview" target="_blank" rel="external">点击查看详情</a>）。</p>
+<p><strong>为短声和震动，使用系统声音服务</strong>。这个指的是<code>AudioToolbox</code>（<a href="https://developer.apple.com/reference/audiotoolbox/system_sound_services" target="_blank" rel="external">System Sound Services</a>）。</p>
+<p><strong>如果你的应用必须使用声音，那么给音频归类</strong>。实际上指的是<code>AVAudioSession</code>的 category，当其值不同，表现也不同。具体看下表：</p>
+<table>
+<thead>
+<tr>
+<th>category</th>
+<th>含义</th>
+<th>表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Solo ambient</td>
+<td>声音不是必须的（essential），但是它会静默其他音频。比如，带有配乐的游戏。</td>
+<td>1.受静音开关控制。2.不和其他声音混合（mix）。3.应用在后台时不播放。</td>
+</tr>
+<tr>
+<td>Ambient</td>
+<td>声音不是必须的，并且不会静默其他音频。比如，一个游戏应用可以让用户在玩游戏时播放另一个应用中的音乐，来替代游戏的配乐。</td>
+<td>1.受静音开关控制。2.和其他声音混合。3.应用在后台时不播放。</td>
+</tr>
+<tr>
+<td>Playback</td>
+<td>声音是必须的，并且跟其他声音混合。比如，语音电子书应用，用户可能想在离开应用后，仍然可以听。</td>
+<td>1.不受静音开关控制。2.可能混合，也可能不混合其他声音。3.可以在后台播放。</td>
+</tr>
+<tr>
+<td>Record</td>
+<td>录音。比如，语音备忘录这类应用。</td>
+<td>不受静音开关控制。2.不和其他声音混合。3.可以在后台录音。</td>
+</tr>
+<tr>
+<td>Play and Record</td>
+<td>声音可能同时被录制和播放。例如，一个语音信息应用。</td>
+<td>1.不受静音开关控制。2.可能混合，也可能不混合其他声音。3.可以在后台录制或播放。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>被打断以后，在合适的时间继续播放</strong>。有时候，当前播放的音频可能被另一个应用打断。临时打断可以重新开始，比如打进来的电话。永久打断不能重新开始，比如由 Siri 开始的音乐播放列表。</p>
+<p><strong>在你的应用结束一段临时的语音播放时，让其他应用知道</strong>。如果你的应用可能会临时打断其他应用的音频，你应该在合适的时候让其他应用可以安全的重新开始时得到通知。实现细节可以看这里：<a href="https://developer.apple.com/reference/avfoundation/avaudiosessionsetactiveoptions/avaudiosessionsetactiveoptionnotifyothersondeactivation" target="_blank" rel="external">AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation</a>。</p>
+<p><strong>不要重新调整音频附件</strong>。人们希望在所有的应用中，音频附件的行为一致。一定不要重新定义一个语音附件的意义。如果你的应用不支持某种附件，不响应它就好了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;早期某知名公司的应用有这么一个问题，如果我在听音乐时打开该应用，播放一段小视频，视频播放完成之后，音乐没有继续播放。这个问题被很多用户吐槽，很久以后，该公司终于修复了这个问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;无论声音是应用体验的重要部分
+    
+    </summary>
+    
+    
+      <category term="iOS" scheme="https://xjshi.github.io/tags/iOS/"/>
     
   </entry>
   
