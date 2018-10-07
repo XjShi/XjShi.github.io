@@ -1,448 +1,2097 @@
+<!DOCTYPE html>
 
- <!DOCTYPE HTML>
-<html >
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next mist" lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  
-    <title>land</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-    
-    <meta name="author" content="ebebya">
-    
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
 
-    
-    <meta property="og:type" content="website">
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.2" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.2',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta property="og:type" content="website">
 <meta property="og:title" content="land">
 <meta property="og:url" content="https://xjshi.github.io/index.html">
 <meta property="og:site_name" content="land">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="land">
 
-    
-    <link rel="alternative" href="/atom.xml" title="land" type="application/atom+xml">
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="apple-touch-icon" href="/img/jacman.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
-    
-    <link rel="stylesheet" href="/css/style.css">
+
+
+  <link rel="alternate" href="/atom.xml" title="land" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://xjshi.github.io/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>land</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
 </head>
 
-  <body>
-    <header>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">land</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
       
-<div>
-		
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="land">land</a></h1>
-				<h2 class="blog-motto"></h2>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
-			</a></div>
-			<nav class="animated">
-				<ul>
-					<ul>
-					 
-						<li><a href="/">Home</a></li>
-					
-						<li><a href="/archives">Archives</a></li>
-					
-						<li><a href="/say">Say</a></li>
-					
-						<li><a href="/about">About</a></li>
-					
-					<li>
- 					
-					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="search" id="search" autocomplete="off" name="q" maxlength="20" placeholder="Search" />
-					</form>
-					
-					</li>
-				</ul>
-			</nav>			
+        
+        
+        
+          
+          <li class="menu-item menu-item-home menu-item-active">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
 </div>
     </header>
-    <div id="container">
-      <div id="main">
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
 
   
-<section class="post" itemscope itemprop="blogitem">
+
   
-    <a href="/2016/11/27/简单看了眼tinyfool经常提到的日历控件源代码/" title="简单看了眼tinyfool经常提到的日历控件源代码" itemprop="url">
   
-    <h1 itemprop="name">简单看了眼tinyfool经常提到的日历控件源代码</h1>
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xjshi.github.io/2016/11/27/简单看了眼tinyfool经常提到的日历控件源代码/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ebebya">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="land">
+    </span>
+
     
-     
-           <p itemprop="description" >先贴上源码地址：Here
-代码是是08年写的，这点还是非常服的，这个时候我还在上高中。08年到现在OC在一些特性上改进很多，其中使用的CFGregorianDate相关api在iOS 8.0之后也不建议使用了，所以这里我只说我确认不是好的实践的部分。
-先来看下头文件:
-12345</p>
+      <header class="post-header">
+
         
-    
-    <time datetime="2016-11-27T09:11:26.000Z" itemprop="datePublished">2016-11-27</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/11/19/Swift-Enumerations/" title="Swift: Enumerations" itemprop="url">
-  
-    <h1 itemprop="name">Swift: Enumerations</h1>
-    
-     
-           <p itemprop="description" >Enumerations in Swift are flexible, and do not have to provide a value for each case of the enumeration. If a value(known as “raw” value) if</p>
         
-    
-    <time datetime="2016-11-19T13:30:32.000Z" itemprop="datePublished">2016-11-19</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/11/11/Swift-Initialization-2/" title="Swift: Initialization-2" itemprop="url">
-  
-    <h1 itemprop="name">Swift: Initialization-2</h1>
-    
-     
-           <p itemprop="description" >##Failable Initializers有的时候，可能是参数问题、需要的外部资源没有到位等原因，初始化可能失败。为了应对这种情况，我们可以定义一个或多个可失败的构造方法。 init？
-A failable initiazlier creates an optional va</p>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/27/简单看了眼tinyfool经常提到的日历控件源代码/" itemprop="url">
+                  简单看了眼tinyfool经常提到的日历控件源代码
+                </a>
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-11-27 17:11:26" itemprop="dateCreated datePublished" datetime="2016-11-27T17:11:26+08:00">2016-11-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-07 22:18:22" itemprop="dateModified" datetime="2018-10-07T22:18:22+08:00">2018-10-07</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
     
-    <time datetime="2016-11-11T15:24:18.000Z" itemprop="datePublished">2016-11-11</time>
-  </a>
-</section>
 
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/11/11/Siwft-Initialization-1/" title="Siwft: Initialization-1" itemprop="url">
-  
-    <h1 itemprop="name">Siwft: Initialization-1</h1>
     
-     
-           <p itemprop="description" >初始化的过程包括为每一个存储属性设置一个初始值和其他步骤。通过定义构造函数来实现初始化的过程，跟oc的初始化函数不同，Swift的构造函数不返回一个值。它们的主要角色是确保一个类型的实例在初次使用前被正确的初始化。
-类的实例也可以有析构函数，析构函数在类的实例在释放前完成一些清理</p>
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-    
-    <time datetime="2016-11-11T10:12:05.000Z" itemprop="datePublished">2016-11-11</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/11/11/Swift-Inheritance/" title="Swift: Inheritance" itemprop="url">
-  
-    <h1 itemprop="name">Swift: Inheritance</h1>
-    
-     
-           <p itemprop="description" >为了在属性值改变的时候获得通知，类可以为继承的属性添加属性观察者。属性观察者可以添加到任何属性上，不管这个属性原来是存储属性还是计算属性。
-Swift中的类没有一个统一的基类。
-为了讲明白继承，我们先来定义一个基类：
-123456789class Vehicle &amp;#123;  </p>
+          <p>先贴上源码地址：<a href="https://code.google.com/archive/p/iphonecal/source/default/source">Here</a></p>
+<p>代码是是08年写的，这点还是非常服的，这个时候我还在上高中。08年到现在OC在一些特性上改进很多，其中使用的<code>CFGregorianDate</code>相关api在iOS 8.0之后也不建议使用了，所以这里我只说我确认不是好的实践的部分。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/11/27/简单看了眼tinyfool经常提到的日历控件源代码/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
+      
+    </div>
+
     
-    <time datetime="2016-11-11T09:17:38.000Z" itemprop="datePublished">2016-11-11</time>
-  </a>
-</section>
 
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/11/11/Swift-Subcripts/" title="Swift: Subcripts" itemprop="url">
-  
-    <h1 itemprop="name">Swift: Subcripts</h1>
     
-     
-           <p itemprop="description" >类、结构体、枚举都可以定义下标（subscript），下标是访问集合、列表、序列的元素的快捷方式。
-在Swift中可以为类型定义下标，而且不限于一维。
-##语法下标定义的方法：跟实例方法的语法类似，subscript关键字，一个或多个输入参数，一个返回值。
-下标可以是可读可写的，</p>
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xjshi.github.io/2016/11/19/Swift-Enumerations/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ebebya">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="land">
+    </span>
+
+    
+      <header class="post-header">
+
         
-    
-    <time datetime="2016-11-11T08:24:19.000Z" itemprop="datePublished">2016-11-11</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/11/10/Swift-Classes-and-Structures/" title="Swift: Classes and Structures" itemprop="url">
-  
-    <h1 itemprop="name">Swift: Classes and Structures</h1>
-    
-     
-           <p itemprop="description" >##对比类与结构体类与结构体有许多的相同点，它们都可以：  
-
-定义属性来存储值；
-定义方法来提供功能；
-定义下标操作；
-定义初始化函数；
-扩展它的默认的实现；
-遵从协议；
-
-类有一些额外的能力，但是结构体没有：
-
-继承；
-类型转换可以让你在运行时check、interpret类</p>
         
-    
-    <time datetime="2016-11-10T14:09:01.000Z" itemprop="datePublished">2016-11-10</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/11/10/Swift-Methods/" title="Swift: Methods" itemprop="url">
-  
-    <h1 itemprop="name">Swift: Methods</h1>
-    
-     
-           <p itemprop="description" >这里的“方法”指的是跟特定类型有关系的函数。
-方法包括实例方法(Instance Method)和类型方法(Type Method)。实例方法可以访问所有该类型所有其他的实例方法和属性。
-##实例方法
-###在实例方法中修改值类型的数据(Modifying Value Types</p>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/19/Swift-Enumerations/" itemprop="url">
+                  Swift: Enumerations
+                </a>
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-11-19 21:30:32" itemprop="dateCreated datePublished" datetime="2016-11-19T21:30:32+08:00">2016-11-19</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-07 22:40:19" itemprop="dateModified" datetime="2018-10-07T22:40:19+08:00">2018-10-07</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
     
-    <time datetime="2016-11-10T07:50:09.000Z" itemprop="datePublished">2016-11-10</time>
-  </a>
-</section>
 
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/11/09/Swift-Properties/" title="Swift: Properties" itemprop="url">
-  
-    <h1 itemprop="name">Swift: Properties</h1>
     
-     
-           <p itemprop="description" >属性常与类、结构体、枚举联系在一起。stored properties存储常量值、变量值，而computed properties计算一个值。类、结构体、枚举都可以有computed property，但是只有类与结构体可以有stored property。
-##Stored P</p>
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-    
-    <time datetime="2016-11-09T15:30:55.000Z" itemprop="datePublished">2016-11-09</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2016/11/09/Swift-Functions/" title="Swift: Functions" itemprop="url">
-  
-    <h1 itemprop="name">Swift: Functions</h1>
-    
-     
-           <p itemprop="description" >###默认参数值(Default Parameter Values)1234567//默认参数值func someFunction(parameterWithoutDefault: Int, parameterWithDefault: Int = 12) &amp;#123;    &amp;#</p>
+          <p>Enumerations in Swift are flexible, and do not have to provide a value for each case of the enumeration. If a value(known as “raw” value) if provied for each enumeration case, the value can be a string, a character, or a value of any integer for floating-point type.  </p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/11/19/Swift-Enumerations/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
+      
+    </div>
+
     
-    <time datetime="2016-11-09T12:39:29.000Z" itemprop="datePublished">2016-11-09</time>
-  </a>
-</section>
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xjshi.github.io/2016/11/11/Swift-Initialization-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ebebya">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="land">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/11/Swift-Initialization-2/" itemprop="url">
+                  Swift: Initialization-2
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-11-11 23:24:18" itemprop="dateCreated datePublished" datetime="2016-11-11T23:24:18+08:00">2016-11-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-07 22:46:56" itemprop="dateModified" datetime="2018-10-07T22:46:56+08:00">2018-10-07</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Failable-Initializers"><a href="#Failable-Initializers" class="headerlink" title="Failable Initializers"></a>Failable Initializers</h2><p>有的时候，可能是参数问题、需要的外部资源没有到位等原因，初始化可能失败。为了应对这种情况，我们可以定义一个或多个可失败的构造方法。 <code>init？</code></p>
+<p>A failable initiazlier creates an optional value of the type it initializes.</p>
+<p>通过返回nil来表示初始化失败，看个例子：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Animal</span> </span>&#123;</div><div class="line">    <span class="keyword">let</span> species: <span class="type">String</span></div><div class="line">    <span class="keyword">init</span>?(species: <span class="type">String</span>) &#123;</div><div class="line">        <span class="keyword">if</span> species.isEmpty &#123;</div><div class="line">            <span class="keyword">return</span> <span class="literal">nil</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">self</span>.species = species</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> someCreature = <span class="type">Animal</span>(species: <span class="string">"Giraffe"</span>)</div><div class="line"><span class="comment">//someCreature的类型是Animal?</span></div><div class="line"><span class="keyword">if</span> <span class="keyword">let</span> giraffe = someCreature &#123;</div><div class="line">	<span class="comment">//</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Failable-Initializers-for-Enumerations"><a href="#Failable-Initializers-for-Enumerations" class="headerlink" title="Failable Initializers for Enumerations"></a>Failable Initializers for Enumerations</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">TemperatureUnit</span> </span>&#123;</div><div class="line">    <span class="keyword">case</span> kelvin, celsius, fahrenheit</div><div class="line">    <span class="keyword">init</span>?(symbol: <span class="type">Character</span>) &#123;</div><div class="line">        <span class="keyword">switch</span> symbol &#123;</div><div class="line">        <span class="keyword">case</span> <span class="string">"K"</span>:</div><div class="line">            <span class="keyword">self</span> = .kelvin</div><div class="line">        <span class="keyword">case</span> <span class="string">"C"</span>:</div><div class="line">            <span class="keyword">self</span> = .celsius</div><div class="line">        <span class="keyword">case</span> <span class="string">"F"</span>:</div><div class="line">            <span class="keyword">self</span> = .fahrenheit</div><div class="line">        <span class="keyword">default</span>:</div><div class="line">            <span class="keyword">return</span> <span class="literal">nil</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> fahrenheitUnit = <span class="type">TemperatureUnit</span>(symbol: <span class="string">"F"</span>)</div><div class="line"><span class="keyword">if</span> fahrenheitUnit != <span class="literal">nil</span> &#123;</div><div class="line">    <span class="built_in">print</span>(<span class="string">"This is a defined temperature unit, so initialization succeeded."</span>)</div><div class="line">&#125;</div><div class="line"><span class="comment">// Prints "This is a defined temperature unit, so initialization succeeded."</span></div><div class="line"> </div><div class="line"><span class="keyword">let</span> unknownUnit = <span class="type">TemperatureUnit</span>(symbol: <span class="string">"X"</span>)</div><div class="line"><span class="keyword">if</span> unknownUnit == <span class="literal">nil</span> &#123;</div><div class="line">    <span class="built_in">print</span>(<span class="string">"This is not a defined temperature unit, so initialization failed."</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Failable-Initializers-for-Enumerations-with-Raw-Values"><a href="#Failable-Initializers-for-Enumerations-with-Raw-Values" class="headerlink" title="Failable Initializers for Enumerations with Raw Values"></a>Failable Initializers for Enumerations with Raw Values</h3><p>Enumerations with raw values automatically receive a failable initializer, <code>init?(rawValue):)</code>, that takes a parameter called <code>rawValue</code> of the appropriate raw-value type and selects a matching enumeration case if one if found, ro triggers an initialization failure if no matching value exists.</p>
+<p>把上面的例子改写一下：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">TemperatureUnit</span>: <span class="title">Character</span> </span>&#123;</div><div class="line">    <span class="keyword">case</span> kelvin = <span class="string">"K"</span>, celsius = <span class="string">"C"</span>, fahrenheit = <span class="string">"F"</span></div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">let</span> fahrenheitUnit = <span class="type">TemperatureUnit</span>(rawValue: <span class="string">"F"</span>)</div><div class="line"><span class="keyword">if</span> fahrenheitUnit != <span class="literal">nil</span> &#123;</div><div class="line">    <span class="built_in">print</span>(<span class="string">"This is a defined temperature unit, so initialization succeeded."</span>)</div><div class="line">&#125;</div><div class="line"><span class="comment">// Prints "This is a defined temperature unit, so initialization succeeded."</span></div><div class="line"> </div><div class="line"><span class="keyword">let</span> unknownUnit = <span class="type">TemperatureUnit</span>(rawValue: <span class="string">"X"</span>)</div><div class="line"><span class="keyword">if</span> unknownUnit == <span class="literal">nil</span> &#123;</div><div class="line">    <span class="built_in">print</span>(<span class="string">"This is not a defined temperature unit, so initialization failed."</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Propagation-of-Initialization-Failure"><a href="#Propagation-of-Initialization-Failure" class="headerlink" title="Propagation of Initialization Failure"></a>Propagation of Initialization Failure</h3><p>一个类、结构体、枚举的可失败的构造方法可以delegate across同一个类型中另一个可失败的构造方法。子类的一个可失败的构造方法可以delegate up父类的可失败的构造方法。</p>
+<p>一个可失败的构造方法也可以delegate to不可失败的构造方法。</p>
+<p>看个例子：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Product</span> </span>&#123;</div><div class="line">    <span class="keyword">let</span> name: <span class="type">String</span></div><div class="line">    <span class="keyword">init</span>?(name: <span class="type">String</span>) &#123;</div><div class="line">        <span class="keyword">if</span> name.isEmpty &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;</div><div class="line">        <span class="keyword">self</span>.name = name</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CartItem</span>: <span class="title">Product</span> </span>&#123;</div><div class="line">    <span class="keyword">let</span> quantity: <span class="type">Int</span></div><div class="line">    <span class="keyword">init</span>?(name: <span class="type">String</span>, quantity: <span class="type">Int</span>) &#123;</div><div class="line">        <span class="keyword">if</span> quantity &lt; <span class="number">1</span> &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;</div><div class="line">        <span class="keyword">self</span>.quantity = quantity</div><div class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>(name: name)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Overriding-a-Failable-Initializer"><a href="#Overriding-a-Failable-Initializer" class="headerlink" title="Overriding a Failable Initializer"></a>Overriding a Failable Initializer</h3><p>父类的可失败的构造函数可以被重写为可失败的或者不可失败的。看个例子：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Document</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> name: <span class="type">String</span>?</div><div class="line">    <span class="comment">// this initializer creates a document with a nil name value</span></div><div class="line">    <span class="keyword">init</span>() &#123;&#125;</div><div class="line">    <span class="comment">// this initializer creates a document with a nonempty name value</span></div><div class="line">    <span class="keyword">init</span>?(name: <span class="type">String</span>) &#123;</div><div class="line">        <span class="keyword">if</span> name.isEmpty &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;</div><div class="line">        <span class="keyword">self</span>.name = name</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AutomaticallyNamedDocument</span>: <span class="title">Document</span> </span>&#123;</div><div class="line">    <span class="keyword">override</span> <span class="keyword">init</span>() &#123;</div><div class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>()</div><div class="line">        <span class="keyword">self</span>.name = <span class="string">"[Untitled]"</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">override</span> <span class="keyword">init</span>(name: <span class="type">String</span>) &#123;</div><div class="line">        <span class="keyword">super</span>.<span class="keyword">init</span>()</div><div class="line">        <span class="keyword">if</span> name.isEmpty &#123;</div><div class="line">            <span class="keyword">self</span>.name = <span class="string">"[Untitled]"</span></div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">self</span>.name = name</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="The-init-Failable-Initializer"><a href="#The-init-Failable-Initializer" class="headerlink" title="The init! Failable Initializer"></a>The init! Failable Initializer</h3><p><code>init!</code> implicitly unwrapped optional instance</p>
+<h2 id="Required-Initiazliers"><a href="#Required-Initiazliers" class="headerlink" title="Required Initiazliers"></a>Required Initiazliers</h2><p>在构造方法的定义前边加上<code>required</code>修饰符来表示这个类的每一个子类都必须实现这个构造方法：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span> </span>&#123;</div><div class="line">    <span class="keyword">required</span> <span class="keyword">init</span>() &#123;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当重写一个required指定构造器时，不用在前边加<code>override</code>修饰。</p>
+<p>注意：<strong>如果你可以使用一个继承的构造方法来满足的话，那么你可以不提供一个显式的required构造方法。</strong><br>比如说我们定义一个子类：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeSubClass</span>: <span class="title">SomeClass</span> </span>&#123;</div><div class="line">    <span class="keyword">required</span> <span class="keyword">init</span>() &#123;</div><div class="line">        <span class="comment">//</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这样写，没有问题。我们也可以这样写：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeSubClass</span>: <span class="title">SomeClass</span> </span>&#123;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这样写也没有问题，因为<code>init()</code>方法被自动继承了。我们接着看：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeSubClass</span>: <span class="title">SomeClass</span> </span>&#123;</div><div class="line">    <span class="keyword">init</span>(name: <span class="type">String</span>) &#123;</div><div class="line">        <span class="comment">//</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这样因为我们自定义了一个指定构造方法，<code>SomeSubClass</code>不会自动继承父类的指定构造方法（<code>init()</code>），所以编译器会提示我们一个错误。</p>
+<h2 id="Setting-a-Default-Property"><a href="#Setting-a-Default-Property" class="headerlink" title="Setting a Default Property"></a>Setting a Default Property</h2><p>主要用途是为存储属性进行一些处理，可以使用全局函数或者闭包。看起来大概是这个样子：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span> </span>&#123;</div><div class="line">    <span class="keyword">let</span> someProperty: <span class="type">SomeType</span> = &#123;</div><div class="line">        <span class="comment">// create a default value for someProperty inside this closure</span></div><div class="line">        <span class="comment">// someValue must be of the same type as SomeType</span></div><div class="line">        <span class="keyword">return</span> someValue</div><div class="line">    &#125;()</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xjshi.github.io/2016/11/11/Siwft-Initialization-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ebebya">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="land">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/11/Siwft-Initialization-1/" itemprop="url">
+                  Siwft: Initialization-1
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-11-11 18:12:05" itemprop="dateCreated datePublished" datetime="2016-11-11T18:12:05+08:00">2016-11-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-07 22:38:06" itemprop="dateModified" datetime="2018-10-07T22:38:06+08:00">2018-10-07</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>初始化的过程包括为每一个存储属性设置一个初始值和其他步骤。通过定义构造函数来实现初始化的过程，跟oc的初始化函数不同，Swift的构造函数不返回一个值。它们的主要角色是确保一个类型的实例在初次使用前被正确的初始化。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/11/11/Siwft-Initialization-1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
+    
+      
 
-  <nav id="page-nav" class="clearfix unexpand">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xjshi.github.io/2016/11/11/Swift-Inheritance/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ebebya">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="land">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/11/Swift-Inheritance/" itemprop="url">
+                  Swift: Inheritance
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-11-11 17:17:38" itemprop="dateCreated datePublished" datetime="2016-11-11T17:17:38+08:00">2016-11-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-07 22:40:59" itemprop="dateModified" datetime="2018-10-07T22:40:59+08:00">2018-10-07</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>为了在属性值改变的时候获得通知，类可以为继承的属性添加属性观察者。属性观察者可以添加到任何属性上，不管这个属性原来是存储属性还是计算属性。</p>
+<p>Swift中的类没有一个统一的基类。</p>
+<p>为了讲明白继承，我们先来定义一个基类：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Vehicle</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> currentSpeed = <span class="number">0.0</span></div><div class="line">    <span class="keyword">var</span> description: <span class="type">String</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"traveling at \(currentSpeed) miles per hour"</span></div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">makeNoise</span><span class="params">()</span></span> &#123;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>下面定义一个子类继承自<code>Vehicle</code>:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bicycle</span>: <span class="title">Vehicle</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> hasBasket = <span class="literal">false</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h2><p>重写以<code>override</code>开头，任何不带<code>override</code>关键字的重写，都会在编译时判断为一个错误。</p>
+<h3 id="访问超类的方法、属性、下标"><a href="#访问超类的方法、属性、下标" class="headerlink" title="访问超类的方法、属性、下标"></a>访问超类的方法、属性、下标</h3><ul>
+<li>父类有一个被重写的someMethod()方法：<code>super.someMethod()</code></li>
+<li>父类有一个被重写的someProperty属性：<code>super.someProperty</code></li>
+<li>父类有一个对于someIndex的下标被重写：<code>super[someIndex]</code></li>
+</ul>
+<h3 id="Override-Methods"><a href="#Override-Methods" class="headerlink" title="Override Methods"></a>Override Methods</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Train</span>: <span class="title">Vehicle</span> </span>&#123;</div><div class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">makeNoise</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="built_in">print</span>(<span class="string">"Choo Choo"</span>)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="重写属性的getter-setter"><a href="#重写属性的getter-setter" class="headerlink" title="重写属性的getter/setter"></a>重写属性的getter/setter</h3><p>不论原来的属性时存储型还是计算型，你都可以提供一个自定义的getter来重写这个继承的属性。一个属性时存储型，还是计算型，子类并不知道，子类只知道被继承的属性有一个确定的名字和类型。你要规定你重写的属性的名字和类型，来让编译器检查你的重写跟父类中的属性有相同的名字和属性。如果觉得这段不好理解，可以看下原文：</p>
+<p>“The stored or computed nature of an inherited property is not known by a subclass—it only knows that the inherited property has a certain name and type. You must always state both the name and the type of the property you are overriding, to enable the compiler to check that your override matches a superclass property with the same name and type.”</p>
+<p>Excerpt From: Apple Inc. “The Swift Programming Language (Swift 3).” iBooks. </p>
+<p>看个例子：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>: <span class="title">Vehicle</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> gear = <span class="number">1</span></div><div class="line">    <span class="keyword">override</span> <span class="keyword">var</span> description: <span class="type">String</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.description + <span class="string">" in gear \(gear)"</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="重写属性观察者"><a href="#重写属性观察者" class="headerlink" title="重写属性观察者"></a>重写属性观察者</h3><p>你可以使用属性重写给继承的属性添加属性观察者。</p>
+<p>因为常量存储型属性和只读的计算型属性不能被设置新值，所有不能给这样的属性通过继承添加属性观察者。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AutomaticCar</span>: <span class="title">Car</span> </span>&#123;</div><div class="line">    <span class="keyword">override</span> <span class="keyword">var</span> currentSpeed: <span class="type">Double</span> &#123;</div><div class="line">        <span class="keyword">didSet</span> &#123;</div><div class="line">            gear = <span class="type">Int</span>(currentSpeed / <span class="number">10.0</span>) + <span class="number">1</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Perventing-Overrides"><a href="#Perventing-Overrides" class="headerlink" title="Perventing Overrides"></a>Perventing Overrides</h2><p>可以把一个方法、属性、下标标记为<code>final</code>来防止其被重写，也可以把真个类用<code>final</code>来标记，任何企图重写final标记的，都会报一个运行时错误。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xjshi.github.io/2016/11/11/Swift-Subcripts/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ebebya">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="land">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/11/Swift-Subcripts/" itemprop="url">
+                  Swift: Subcripts
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-11-11 16:24:19" itemprop="dateCreated datePublished" datetime="2016-11-11T16:24:19+08:00">2016-11-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-07 22:42:00" itemprop="dateModified" datetime="2018-10-07T22:42:00+08:00">2018-10-07</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>类、结构体、枚举都可以定义下标（subscript），下标是访问集合、列表、序列的元素的快捷方式。</p>
+<p>在Swift中可以为类型定义下标，而且不限于一维。</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>下标定义的方法：跟实例方法的语法类似，<code>subscript</code>关键字，一个或多个输入参数，一个返回值。</p>
+<p>下标可以是可读可写的，也可以是只可读的，由getter和setter决定，跟computed property类似。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">subscript</span>(index: <span class="type">Int</span>) -&gt; <span class="type">Int</span> &#123;</div><div class="line">    <span class="keyword">get</span> &#123;</div><div class="line">        <span class="comment">// return an appropriate subscript value here</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">set</span>(newValue) &#123;</div><div class="line">        <span class="comment">// perform a suitable setting action here</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>newValue的类型跟下标操作的返回值的类型相同，与计算属性一样，你可以不指定newValue这个参数，那么会默认提供一个newValue。</p>
+<p>跟只读的计算属性一样，只读的下标也可以这样写：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">subscript</span>(index: <span class="type">Int</span>) -&gt; <span class="type">Int</span> &#123;</div><div class="line">	<span class="comment">// return a appropriate subscript value here</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="Subscript-Options"><a href="#Subscript-Options" class="headerlink" title="Subscript Options"></a>Subscript Options</h2><p>下标可以带任意数量的输入参数，这些参数可以是任何类型。下标也可以返回任何类型。<strong>下标可以使用可变参数（variadic parameters），蚕食不能使用in-out参数，或者提供默认参数值。</strong></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xjshi.github.io/2016/11/10/Swift-Classes-and-Structures/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ebebya">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="land">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/10/Swift-Classes-and-Structures/" itemprop="url">
+                  Swift: Classes and Structures
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-11-10 22:09:01" itemprop="dateCreated datePublished" datetime="2016-11-10T22:09:01+08:00">2016-11-10</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-07 22:39:52" itemprop="dateModified" datetime="2018-10-07T22:39:52+08:00">2018-10-07</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="对比类与结构体"><a href="#对比类与结构体" class="headerlink" title="对比类与结构体"></a>对比类与结构体</h2><p>类与结构体有许多的相同点，它们都可以：  </p>
+<ul>
+<li>定义属性来存储值；</li>
+<li>定义方法来提供功能；</li>
+<li>定义下标操作；</li>
+<li>定义初始化函数；</li>
+<li>扩展它的默认的实现；</li>
+<li>遵从协议；</li>
+</ul>
+<p>类有一些额外的能力，但是结构体没有：</p>
+<ul>
+<li>继承；</li>
+<li>类型转换可以让你在运行时check、interpret类的实例的类型；</li>
+<li>析构函数（Deinitializer）；</li>
+<li>引用计数允许不止一个指向类实例的引用；</li>
+</ul>
+<p><strong>结构体的传递总是复制，不使用引用计数</strong></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/11/10/Swift-Classes-and-Structures/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xjshi.github.io/2016/11/10/Swift-Methods/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ebebya">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="land">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/10/Swift-Methods/" itemprop="url">
+                  Swift: Methods
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-11-10 15:50:09" itemprop="dateCreated datePublished" datetime="2016-11-10T15:50:09+08:00">2016-11-10</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-07 22:41:18" itemprop="dateModified" datetime="2018-10-07T22:41:18+08:00">2018-10-07</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这里的“方法”指的是跟特定类型有关系的函数。</p>
+<p>方法包括实例方法(Instance Method)和类型方法(Type Method)。实例方法可以访问所有该类型所有其他的实例方法和属性。</p>
+<h2 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h2><h3 id="在实例方法中修改值类型的数据-Modifying-Value-Types-from-Within-Instance-Mothod"><a href="#在实例方法中修改值类型的数据-Modifying-Value-Types-from-Within-Instance-Mothod" class="headerlink" title="在实例方法中修改值类型的数据(Modifying Value Types from Within Instance Mothod)"></a>在实例方法中修改值类型的数据(Modifying Value Types from Within Instance Mothod)</h3><p>结构体和枚举是值类型。默认情况下，值类型的属性不能在它的实例方法中修改，但是，如果你需要这么做，你可以为这个方法选择<code>mutating</code>行为。这样这个方法这可以修改它的属性，并且在方法执行结束时把这个修改写回原来的结构体中。甚至，你可以把一个完全新的实例赋值给<code>self</code>属性，这个新的实例将完全替换原来的那个。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> x = <span class="number">0.0</span>, y = <span class="number">0.0</span></div><div class="line">    <span class="keyword">mutating</span> <span class="function"><span class="keyword">func</span> <span class="title">moveBy</span><span class="params">(x deltaX: Double, y deltaY: Double)</span></span> &#123;</div><div class="line">        x += deltaX</div><div class="line">        y += deltaY</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">mutating</span> <span class="function"><span class="keyword">func</span> <span class="title">moveBy2</span><span class="params">(x deltaX: Double, y deltaY: Double)</span></span> &#123;</div><div class="line">        <span class="keyword">self</span> = <span class="type">Point</span>(x: x + deltaX, y: y + deltaY)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在枚举中，可以把self设置成一个不同的case，如下：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">TriStateSwitch</span> </span>&#123;</div><div class="line">    <span class="keyword">case</span> off, low, high</div><div class="line">    <span class="keyword">mutating</span> <span class="function"><span class="keyword">func</span> <span class="title">next</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="keyword">switch</span> <span class="keyword">self</span> &#123;</div><div class="line">        <span class="keyword">case</span> .off:</div><div class="line">            <span class="keyword">self</span> = .low</div><div class="line">        <span class="keyword">case</span> .low:</div><div class="line">            <span class="keyword">self</span> = .high</div><div class="line">        <span class="keyword">case</span> .high:</div><div class="line">            <span class="keyword">self</span> = .off</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="类型方法"><a href="#类型方法" class="headerlink" title="类型方法"></a>类型方法</h2><p>在<code>func</code>关键字前加上<code>static</code>关键字来表示类方法。对于类，也可以使用<code>class</code>关键字来允许子类重写父类的实现。</p>
+<p>在类方法中，隐藏的<code>self</code>属性指向类型本身。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xjshi.github.io/2016/11/09/Swift-Properties/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ebebya">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="land">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/09/Swift-Properties/" itemprop="url">
+                  Swift: Properties
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-11-09 23:30:55" itemprop="dateCreated datePublished" datetime="2016-11-09T23:30:55+08:00">2016-11-09</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-07 22:41:49" itemprop="dateModified" datetime="2018-10-07T22:41:49+08:00">2018-10-07</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>属性常与类、结构体、枚举联系在一起。stored properties存储常量值、变量值，而computed properties计算一个值。类、结构体、枚举都可以有computed property，但是只有类与结构体可以有stored property。</p>
+<h2 id="Stored-Properties"><a href="#Stored-Properties" class="headerlink" title="Stored Properties"></a>Stored Properties</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">FixedLengthRange</span> </span>&#123;</div><div class="line">	<span class="keyword">var</span> firstValue: <span class="type">Int</span></div><div class="line">	<span class="keyword">let</span> length: <span class="type">Int</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> rangeOfThreeItems = <span class="type">FixedLengthRange</span>(firstValue: <span class="number">0</span>, length: <span class="number">3</span>)</div><div class="line">rangeOfThressItems.firstValue = <span class="number">6</span>		<span class="comment">//ok</span></div><div class="line"><span class="keyword">let</span> rangeOfFourItems = <span class="type">FixedLengthRange</span>(firstValue: <span class="number">0</span>, length: <span class="number">4</span>)</div><div class="line">rangeOfFourItems.firstValue = <span class="number">6</span>	<span class="comment">//error</span></div></pre></td></tr></table></figure>
+<p>###Lazy Stored Properties<br>lazy stored property的值直到第一次使用时才会被计算。</p>
+<blockquote>
+<p>注意:</p>
+<ul>
+<li>lazy stored property必须声明为变量，不能是常量。因为这样的属性的值可能会在初始化完成后才获得，而常量属性必须在初始化函数执行完成前有一个值。</li>
+<li>这样的属性，在没有被初始化的情况下同时被多个线程同时访问，不能保证这个属性只初始化一次。</li>
+</ul>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DataImporter</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> fileName = <span class="string">"data.txt"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DataManager</span> </span>&#123;</div><div class="line">    <span class="built_in">lazy</span> <span class="keyword">var</span> importer = <span class="type">DataImporter</span>()</div><div class="line">    <span class="keyword">var</span> data = [<span class="type">String</span>]()</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> manager = <span class="type">DataManager</span>()</div><div class="line">manager.data.append(<span class="string">"Some date"</span>)</div><div class="line">manager.data.append(<span class="string">"Some more data"</span>)</div><div class="line"></div><div class="line"><span class="built_in">print</span>(manager.importer.fileName)	<span class="comment">//importer在这里才被创建</span></div></pre></td></tr></table></figure>
+<h3 id="Stored-Properties-and-Instance-Variables"><a href="#Stored-Properties-and-Instance-Variables" class="headerlink" title="Stored Properties and Instance Variables"></a>Stored Properties and Instance Variables</h3><p>在oc中有两种方式来为类存储值或引用，一是实例变量的方式，二是属性。<br>Swift统一了这些概念，只有声明属性的方式。Swift中的property没有对应的实例变量。</p>
+<h2 id="Computed-Properties"><a href="#Computed-Properties" class="headerlink" title="Computed Properties"></a>Computed Properties</h2><p>类、结构体、枚举都可以定义computed property，computed property不存储值，相反，他们提供一个getter和一个可选的setter来获取和设置其他属性和值。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> x = <span class="number">0.0</span>, y = <span class="number">0.0</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Size</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> width = <span class="number">0.0</span>, height = <span class="number">0.0</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Rect</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> origin = <span class="type">Point</span>()</div><div class="line">    <span class="keyword">var</span> size = <span class="type">Size</span>()</div><div class="line">    <span class="keyword">var</span> center: <span class="type">Point</span> &#123;</div><div class="line">        <span class="keyword">get</span> &#123;</div><div class="line">            <span class="keyword">let</span> centerX = origin.x + (size.width / <span class="number">2.0</span>)</div><div class="line">            <span class="keyword">let</span> centerY = origin.y + (size.height / <span class="number">2.0</span>)</div><div class="line">            <span class="keyword">return</span> <span class="type">Point</span>(x: centerX, y: centerY)</div><div class="line">        &#125;</div><div class="line">        <span class="comment">/*</span></div><div class="line">        set(newCenter) &#123;</div><div class="line">            origin.x = newCenter.x - (size.width / 2)</div><div class="line">            origin.y = newCenter.y - (size.height / 2)</div><div class="line">        &#125;</div><div class="line"> */</div><div class="line">        <span class="keyword">set</span> &#123;</div><div class="line">            origin.x = newValue.x - (size.width / <span class="number">2</span>)</div><div class="line">            origin.y = newValue.y - (size.height / <span class="number">2</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> square = <span class="type">Rect</span>(origin: <span class="type">Point</span>(x: <span class="number">0.0</span>, y: <span class="number">0.0</span>),</div><div class="line">                  size:<span class="type">Size</span>(width: <span class="number">10.0</span>, height:<span class="number">10.0</span>))</div><div class="line"><span class="keyword">let</span> initialSuqareCenter = square.center</div><div class="line">square.center = <span class="type">Point</span>(x: <span class="number">15.0</span>, y: <span class="number">15.0</span>)</div><div class="line"><span class="built_in">print</span>(<span class="string">"quare.origin is now at \(square.origin.x), \(square.origin.y)"</span>)</div></pre></td></tr></table></figure>
+<p>上面的例子中<code>Rect</code>的<code>center</code>属性是computed property。</p>
+<p>如果setter没有为新值定义一个名字，默认的名字是<code>newValue</code>。</p>
+<h3 id="Read-Only-Computed-Properties"><a href="#Read-Only-Computed-Properties" class="headerlink" title="Read-Only Computed Properties"></a>Read-Only Computed Properties</h3><p>可以通过移除<code>get</code>关键字和它对应的括号来简单声明一个read-only computed property，看个例子：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Cuboid</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> width = <span class="number">0.0</span>, height = <span class="number">0.0</span>, depth = <span class="number">0.0</span></div><div class="line">    <span class="keyword">var</span> volume: <span class="type">Double</span> &#123;</div><div class="line">        <span class="keyword">return</span> width * height * depth</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Property-Observers"><a href="#Property-Observers" class="headerlink" title="Property Observers"></a>Property Observers</h2><p>属性观察者监测并相应属性值的变化。没一次一个属性值被设置的时候，观察者都被调用。</p>
+<ol>
+<li>除了lazy stored property，你可以给你定义的任何stored property添加属性观察者。</li>
+<li>你也可以通过在子类中重写继承的属性（stored或者computed都可以），来给属性添加属性观察者。</li>
+<li>没有必要给没有重写的computed property添加观察者，因为你可以在setter中观察和相应值的变化。</li>
+</ol>
+<p><code>willSet</code>在值被存储前调用，<code>didSet</code>在新值被存储后立即调用。(newValue,oldValue)</p>
+<p>如果你在自己的<code>didSet</code>中给属性赋了一个新值，这个新值会替换掉刚刚设置的值。</p>
+<blockquote>
+<p>The <code>willSet</code> and <code>didSet</code> observers of superclass properties are called when a property is set in a subclass initializer, after the superclass initializer has been called. They are not called while a class is setting its own properties, before the superclass initializer has been called.</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">StepCounter</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> totalSteps: <span class="type">Int</span> = <span class="number">0</span> &#123;</div><div class="line">        <span class="keyword">willSet</span>(newTotalSteps) &#123;</div><div class="line">            <span class="built_in">print</span>(<span class="string">"Abount to set totalSteps to \(newTotalSteps)"</span>)</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">didSet</span> &#123;</div><div class="line">            <span class="keyword">if</span> totalSteps &gt; oldValue &#123;</div><div class="line">                <span class="built_in">print</span>(<span class="string">"Added \(totalSteps - oldValue) steps"</span>)</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> stepCounter = <span class="type">StepCounter</span>()</div><div class="line">stepCounter.totalSteps = <span class="number">200</span></div><div class="line">stepCounter.totalSteps = <span class="number">360</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>如果你把一个有属性观察者的属性传递给一个函数的in-out参数，那么<code>willSet</code>和<code>didSet</code>总是会被调用。这是由in-out参数的内存模型决定的。</p>
+</blockquote>
+<h2 id="Type-Properties"><a href="#Type-Properties" class="headerlink" title="Type Properties"></a>Type Properties</h2><p>type property可以理解为C++中的静态成员变量。<br>stored type property可以是变量或者常量。computed type property只能声明称变量。</p>
+<p>跟stored instance property不一样的是，你必须给stored type property一个默认值。因为类型本身没有初始化函数可以给stored type property赋值。</p>
+<p>stored type property是lazy initalized，可以确保在多线程条件下只初始化一次。</p>
+<h3 id="Type-Property-Syntax"><a href="#Type-Property-Syntax" class="headerlink" title="Type Property Syntax"></a>Type Property Syntax</h3><p>可以使用<code>static</code>关键字来定义type property。对于类类型的computed type property，可以使用<code>class</code>关键字来允许子类重写父类的实现。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span> </span>&#123;</div><div class="line">    <span class="keyword">static</span> <span class="keyword">var</span> storedTypeProperty = <span class="string">"Some value."</span></div><div class="line">    <span class="keyword">static</span> <span class="keyword">var</span> computedTypeProperty: <span class="type">Int</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">27</span></div><div class="line">    &#125;</div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">var</span> <span class="title">overrideableComputedTypeProperty</span>: <span class="title">Int</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">107</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xjshi.github.io/2016/11/09/Swift-Functions/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ebebya">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="land">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/09/Swift-Functions/" itemprop="url">
+                  Swift: Functions
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-11-09 20:39:29" itemprop="dateCreated datePublished" datetime="2016-11-09T20:39:29+08:00">2016-11-09</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-07 22:40:36" itemprop="dateModified" datetime="2018-10-07T22:40:36+08:00">2018-10-07</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="默认参数值-Default-Parameter-Values"><a href="#默认参数值-Default-Parameter-Values" class="headerlink" title="默认参数值(Default Parameter Values)"></a>默认参数值(Default Parameter Values)</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//默认参数值</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">someFunction</span><span class="params">(parameterWithoutDefault: Int, parameterWithDefault: Int = <span class="number">12</span>)</span></span> &#123;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line">someFunction(parameterWithoutDefault: <span class="number">10</span>)</div><div class="line">someFunction(parameterWithoutDefault: <span class="number">10</span>, parameterWithDefault: <span class="number">23</span>)</div></pre></td></tr></table></figure>
+<h3 id="可变长参数-Variadic-Parameters"><a href="#可变长参数-Variadic-Parameters" class="headerlink" title="可变长参数(Variadic Parameters)"></a>可变长参数(Variadic Parameters)</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">arithmeticMean</span><span class="params">(<span class="number">_</span> numbers: Double...)</span></span> -&gt; <span class="type">Double</span> &#123;</div><div class="line">    <span class="keyword">var</span> total: <span class="type">Double</span> = <span class="number">0</span></div><div class="line">    <span class="keyword">for</span> number <span class="keyword">in</span> numbers &#123;</div><div class="line">        total += number</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> total / <span class="type">Double</span>(numbers.<span class="built_in">count</span>)</div><div class="line">&#125;</div><div class="line">arithmeticMean(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</div><div class="line">arithmeticMean(<span class="number">3</span>, <span class="number">8.25</span>,<span class="number">13.23</span>)</div></pre></td></tr></table></figure>
+<p><em>一个函数最多有一个可边长参数</em></p>
+<h3 id="In-Out-Parameters"><a href="#In-Out-Parameters" class="headerlink" title="In-Out Parameters"></a>In-Out Parameters</h3><ul>
+<li>函数参数默认是常量，如果你想要修改一个参数的值，并且让这个改变在函数调用结束后依然有效，就要把参数定义为in-out。  </li>
+<li>语法：在参数类型前边加<code>inout</code>关键字。  </li>
+<li>只能把变量传递给函数的inout参数，不能传递一个常量或者字面值，因为常量或者字面值不能够被修改。  </li>
+<li>可以在变量名字前边放<code>&amp;</code>符号，表示变量可以被函数改变。  </li>
+</ul>
+<p><em>in-out参数不能有默认值，可变参数不能标记为inout。</em></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">swapTwoInts</span><span class="params">(<span class="number">_</span> a: <span class="keyword">inout</span> Int, <span class="number">_</span> b: <span class="keyword">inout</span> Int)</span></span> &#123;</div><div class="line">    <span class="keyword">let</span> temporaryA = a</div><div class="line">    a = b</div><div class="line">    b = temporaryA</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> someInt = <span class="number">3</span></div><div class="line"><span class="keyword">var</span> anotherInt = <span class="number">107</span></div><div class="line">swapTwoInts(&amp;someInt, &amp;anotherInt)</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
-</div>
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
-
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
-<aside class="clearfix">
-
-  
 
 
-  
+          </div>
+          
 
-  
-<div class="tagslist">
-	<p class="asidetitle">Tags</p>
-		<ul class="clearfix">
-		
-			
-				<li><a href="/tags/iOS/" title="iOS">iOS<sup>13</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Swift/" title="Swift">Swift<sup>13</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Objective-C/" title="Objective-C">Objective-C<sup>3</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Go/" title="Go">Go<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/胡说八道/" title="胡说八道">胡说八道<sup>1</sup></a></li>
-			
-		
-		</ul>
-</div>
-
-
-  <div class="linkslist">
-  <p class="asidetitle">Links</p>
-    <ul>
+        </div>
         
-          <li>
-            
-            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
-            
-          </li>
-        
-    </ul>
-</div>
-
+          
   
-
-
-  <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
-</div>
-
-</aside>
-</div>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
-    <footer><div id="footer" >
-	
-	
-	<div class="social-font" class="clearfix">
-		
-		<a href="http://weibo.com/2199757565" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	</div>
-			
-		
+  </div>
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
-		
-		<a href="/about" target="_blank" title="ebebya">ebebya</a>
-		
-		
-		</p>
-</div>
-</footer>
-    <script src="/js/jquery-2.0.3.min.js"></script>
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
 
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
-  o.click(function(){
-    o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
-    m.removeClass('moveMain');
-  });
-  $(window).scroll(function(){
-    o.css("top",Math.max(80,260-$(this).scrollTop()));
-  });
-  
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else{
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">ebebya</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">33</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/xjshi" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
         
-    }
-  });
-});
-</script>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ebebya</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.2.2</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.2</div>
+
+
+
+
+        
 
 
 
@@ -451,67 +2100,135 @@ $(document).ready(function(){
 
 
 
+        
+      </div>
+    </footer>
 
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
 
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
+    
+	
+    
+
+    
+  </div>
+
+  
+
 <script type="text/javascript">
-$(document).ready(function(){ 
-  $('.article-content').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
-      var alt = this.alt;
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
-  });
-  if($.fancybox){
-    $('.fancybox').fancybox();
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
   }
-}); 
 </script>
 
 
 
-<!-- Analytics Begin -->
 
 
 
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
 
 
 
-<!-- Analytics End -->
-
-<!-- Totop Begin -->
-
-	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
-	</div>
-	<script src="/js/totop.js"></script>
-
-<!-- Totop End -->
-
-<!-- MathJax Begin -->
-<!-- mathjax config similar to math.stackexchange -->
 
 
-<!-- MathJax End -->
 
-<!-- Tiny_search Begin -->
 
-<!-- Tiny_search End -->
 
-  </body>
- </html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
