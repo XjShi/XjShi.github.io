@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xjshi.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="属性常与类、结构体、枚举联系在一起。stored properties存储常量值、变量值，而computed properties计算一个值。类、结构体、枚举都可以有computed property，但是只有类与结构体可以有stored property。 Stored Properties123456789struct FixedLengthRange &amp;#123;	var firstValu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swift: Properties">
+<meta property="og:url" content="https://xjshi.github.io/2016/11/09/Swift-Properties/index.html">
+<meta property="og:site_name" content="land">
+<meta property="og:description" content="属性常与类、结构体、枚举联系在一起。stored properties存储常量值、变量值，而computed properties计算一个值。类、结构体、枚举都可以有computed property，但是只有类与结构体可以有stored property。 Stored Properties123456789struct FixedLengthRange &amp;#123;	var firstValu">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-11-09T23:30:55.000Z">
+<meta property="article:modified_time" content="2023-12-13T12:25:29.685Z">
+<meta property="article:author" content="ebebya">
+<meta property="article:tag" content="Swift">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://xjshi.github.io/2016/11/09/Swift-Properties/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xjshi.github.io/2016/11/09/Swift-Properties/","path":"2016/11/09/Swift-Properties/","title":"Swift: Properties"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Swift: Properties | land</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">land</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Stored-Properties"><span class="nav-number">1.</span> <span class="nav-text">Stored Properties</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Stored-Properties-and-Instance-Variables"><span class="nav-number">1.1.</span> <span class="nav-text">Stored Properties and Instance Variables</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Computed-Properties"><span class="nav-number">2.</span> <span class="nav-text">Computed Properties</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Read-Only-Computed-Properties"><span class="nav-number">2.1.</span> <span class="nav-text">Read-Only Computed Properties</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Property-Observers"><span class="nav-number">3.</span> <span class="nav-text">Property Observers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Type-Properties"><span class="nav-number">4.</span> <span class="nav-text">Type Properties</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Type-Property-Syntax"><span class="nav-number">4.1.</span> <span class="nav-text">Type Property Syntax</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ebebya</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xjshi.github.io/2016/11/09/Swift-Properties/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ebebya">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="land">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Swift: Properties
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2016-11-09 23:30:55" itemprop="dateCreated datePublished" datetime="2016-11-09T23:30:55+00:00">2016-11-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>属性常与类、结构体、枚举联系在一起。stored properties存储常量值、变量值，而computed properties计算一个值。类、结构体、枚举都可以有computed property，但是只有类与结构体可以有stored property。</p>
+<h2 id="Stored-Properties"><a href="#Stored-Properties" class="headerlink" title="Stored Properties"></a>Stored Properties</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">FixedLengthRange</span> </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> firstValue: <span class="type">Int</span></span><br><span class="line">	<span class="keyword">let</span> length: <span class="type">Int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> rangeOfThreeItems <span class="operator">=</span> <span class="type">FixedLengthRange</span>(firstValue: <span class="number">0</span>, length: <span class="number">3</span>)</span><br><span class="line">rangeOfThressItems.firstValue <span class="operator">=</span> <span class="number">6</span>		<span class="comment">//ok</span></span><br><span class="line"><span class="keyword">let</span> rangeOfFourItems <span class="operator">=</span> <span class="type">FixedLengthRange</span>(firstValue: <span class="number">0</span>, length: <span class="number">4</span>)</span><br><span class="line">rangeOfFourItems.firstValue <span class="operator">=</span> <span class="number">6</span>	<span class="comment">//error</span></span><br></pre></td></tr></table></figure>
+<p>###Lazy Stored Properties<br>lazy stored property的值直到第一次使用时才会被计算。</p>
+<blockquote>
+<p>注意:</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>lazy stored property必须声明为变量，不能是常量。因为这样的属性的值可能会在初始化完成后才获得，而常量属性必须在初始化函数执行完成前有一个值。</li>
+<li>这样的属性，在没有被初始化的情况下同时被多个线程同时访问，不能保证这个属性只初始化一次。</li>
+</ul>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DataImporter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> fileName <span class="operator">=</span> <span class="string">&quot;data.txt&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DataManager</span> </span>&#123;</span><br><span class="line">    <span class="keyword">lazy</span> <span class="keyword">var</span> importer <span class="operator">=</span> <span class="type">DataImporter</span>()</span><br><span class="line">    <span class="keyword">var</span> data <span class="operator">=</span> [<span class="type">String</span>]()</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> manager <span class="operator">=</span> <span class="type">DataManager</span>()</span><br><span class="line">manager.data.append(<span class="string">&quot;Some date&quot;</span>)</span><br><span class="line">manager.data.append(<span class="string">&quot;Some more data&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(manager.importer.fileName)	<span class="comment">//importer在这里才被创建</span></span><br></pre></td></tr></table></figure>
+<h3 id="Stored-Properties-and-Instance-Variables"><a href="#Stored-Properties-and-Instance-Variables" class="headerlink" title="Stored Properties and Instance Variables"></a>Stored Properties and Instance Variables</h3><p>在oc中有两种方式来为类存储值或引用，一是实例变量的方式，二是属性。<br>Swift统一了这些概念，只有声明属性的方式。Swift中的property没有对应的实例变量。</p>
+<h2 id="Computed-Properties"><a href="#Computed-Properties" class="headerlink" title="Computed Properties"></a>Computed Properties</h2><p>类、结构体、枚举都可以定义computed property，computed property不存储值，相反，他们提供一个getter和一个可选的setter来获取和设置其他属性和值。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> x <span class="operator">=</span> <span class="number">0.0</span>, y <span class="operator">=</span> <span class="number">0.0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Size</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> width <span class="operator">=</span> <span class="number">0.0</span>, height <span class="operator">=</span> <span class="number">0.0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Rect</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> origin <span class="operator">=</span> <span class="type">Point</span>()</span><br><span class="line">    <span class="keyword">var</span> size <span class="operator">=</span> <span class="type">Size</span>()</span><br><span class="line">    <span class="keyword">var</span> center: <span class="type">Point</span> &#123;</span><br><span class="line">        <span class="keyword">get</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> centerX <span class="operator">=</span> origin.x <span class="operator">+</span> (size.width <span class="operator">/</span> <span class="number">2.0</span>)</span><br><span class="line">            <span class="keyword">let</span> centerY <span class="operator">=</span> origin.y <span class="operator">+</span> (size.height <span class="operator">/</span> <span class="number">2.0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="type">Point</span>(x: centerX, y: centerY)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        set(newCenter) &#123;</span></span><br><span class="line"><span class="comment">            origin.x = newCenter.x - (size.width / 2)</span></span><br><span class="line"><span class="comment">            origin.y = newCenter.y - (size.height / 2)</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">        <span class="keyword">set</span> &#123;</span><br><span class="line">            origin.x <span class="operator">=</span> newValue.x <span class="operator">-</span> (size.width <span class="operator">/</span> <span class="number">2</span>)</span><br><span class="line">            origin.y <span class="operator">=</span> newValue.y <span class="operator">-</span> (size.height <span class="operator">/</span> <span class="number">2</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> square <span class="operator">=</span> <span class="type">Rect</span>(origin: <span class="type">Point</span>(x: <span class="number">0.0</span>, y: <span class="number">0.0</span>),</span><br><span class="line">                  size:<span class="type">Size</span>(width: <span class="number">10.0</span>, height:<span class="number">10.0</span>))</span><br><span class="line"><span class="keyword">let</span> initialSuqareCenter <span class="operator">=</span> square.center</span><br><span class="line">square.center <span class="operator">=</span> <span class="type">Point</span>(x: <span class="number">15.0</span>, y: <span class="number">15.0</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;quare.origin is now at <span class="subst">\(square.origin.x)</span>, <span class="subst">\(square.origin.y)</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>上面的例子中<code>Rect</code>的<code>center</code>属性是computed property。</p>
+<p>如果setter没有为新值定义一个名字，默认的名字是<code>newValue</code>。</p>
+<h3 id="Read-Only-Computed-Properties"><a href="#Read-Only-Computed-Properties" class="headerlink" title="Read-Only Computed Properties"></a>Read-Only Computed Properties</h3><p>可以通过移除<code>get</code>关键字和它对应的括号来简单声明一个read-only computed property，看个例子：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Cuboid</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> width <span class="operator">=</span> <span class="number">0.0</span>, height <span class="operator">=</span> <span class="number">0.0</span>, depth <span class="operator">=</span> <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">var</span> volume: <span class="type">Double</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> width <span class="operator">*</span> height <span class="operator">*</span> depth</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Property-Observers"><a href="#Property-Observers" class="headerlink" title="Property Observers"></a>Property Observers</h2><p>属性观察者监测并相应属性值的变化。没一次一个属性值被设置的时候，观察者都被调用。</p>
+<ol>
+<li>除了lazy stored property，你可以给你定义的任何stored property添加属性观察者。</li>
+<li>你也可以通过在子类中重写继承的属性（stored或者computed都可以），来给属性添加属性观察者。</li>
+<li>没有必要给没有重写的computed property添加观察者，因为你可以在setter中观察和相应值的变化。</li>
+</ol>
+<p><code>willSet</code>在值被存储前调用，<code>didSet</code>在新值被存储后立即调用。(newValue,oldValue)</p>
+<p>如果你在自己的<code>didSet</code>中给属性赋了一个新值，这个新值会替换掉刚刚设置的值。</p>
+<blockquote>
+<p>The <code>willSet</code> and <code>didSet</code> observers of superclass properties are called when a property is set in a subclass initializer, after the superclass initializer has been called. They are not called while a class is setting its own properties, before the superclass initializer has been called.</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StepCounter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> totalSteps: <span class="type">Int</span> <span class="operator">=</span> <span class="number">0</span> &#123;</span><br><span class="line">        <span class="keyword">willSet</span>(newTotalSteps) &#123;</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;Abount to set totalSteps to <span class="subst">\(newTotalSteps)</span>&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">didSet</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> totalSteps <span class="operator">&gt;</span> oldValue &#123;</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;Added <span class="subst">\(totalSteps <span class="operator">-</span> oldValue)</span> steps&quot;</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> stepCounter <span class="operator">=</span> <span class="type">StepCounter</span>()</span><br><span class="line">stepCounter.totalSteps <span class="operator">=</span> <span class="number">200</span></span><br><span class="line">stepCounter.totalSteps <span class="operator">=</span> <span class="number">360</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果你把一个有属性观察者的属性传递给一个函数的in-out参数，那么<code>willSet</code>和<code>didSet</code>总是会被调用。这是由in-out参数的内存模型决定的。</p>
+</blockquote>
+<h2 id="Type-Properties"><a href="#Type-Properties" class="headerlink" title="Type Properties"></a>Type Properties</h2><p>type property可以理解为C++中的静态成员变量。<br>stored type property可以是变量或者常量。computed type property只能声明称变量。</p>
+<p>跟stored instance property不一样的是，你必须给stored type property一个默认值。因为类型本身没有初始化函数可以给stored type property赋值。</p>
+<p>stored type property是lazy initalized，可以确保在多线程条件下只初始化一次。</p>
+<h3 id="Type-Property-Syntax"><a href="#Type-Property-Syntax" class="headerlink" title="Type Property Syntax"></a>Type Property Syntax</h3><p>可以使用<code>static</code>关键字来定义type property。对于类类型的computed type property，可以使用<code>class</code>关键字来允许子类重写父类的实现。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">var</span> storedTypeProperty <span class="operator">=</span> <span class="string">&quot;Some value.&quot;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">var</span> computedTypeProperty: <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">27</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">var</span> <span class="title">overrideableComputedTypeProperty</span>: <span class="title">Int</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">107</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Swift/" rel="tag"># Swift</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2016/11/09/Swift-Functions/" rel="prev" title="Swift: Functions">
+                  <i class="fa fa-chevron-left"></i> Swift: Functions
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2016/11/10/Swift-Methods/" rel="next" title="Swift: Methods">
+                  Swift: Methods <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ebebya</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

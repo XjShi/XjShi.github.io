@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xjshi.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.8.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="需求的TabBar是这样的：5个 tabItem， 中间的那个 item 部分超出系统默认TabBar的上边界。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自定义 TabBar 之理解 hittest">
+<meta property="og:url" content="https://xjshi.github.io/2015/05/03/%E8%87%AA%E5%AE%9A%E4%B9%89-TabBar-%E4%B9%8B%E7%90%86%E8%A7%A3-hittest/index.html">
+<meta property="og:site_name" content="land">
+<meta property="og:description" content="需求的TabBar是这样的：5个 tabItem， 中间的那个 item 部分超出系统默认TabBar的上边界。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xjshi.github.io/2015/05/03/%E8%87%AA%E5%AE%9A%E4%B9%89-TabBar-%E4%B9%8B%E7%90%86%E8%A7%A3-hittest/red-blue.png">
+<meta property="article:published_time" content="2015-05-03T10:23:16.000Z">
+<meta property="article:modified_time" content="2023-12-13T12:25:29.693Z">
+<meta property="article:author" content="ebebya">
+<meta property="article:tag" content="iOS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xjshi.github.io/2015/05/03/%E8%87%AA%E5%AE%9A%E4%B9%89-TabBar-%E4%B9%8B%E7%90%86%E8%A7%A3-hittest/red-blue.png">
+
+
+<link rel="canonical" href="https://xjshi.github.io/2015/05/03/%E8%87%AA%E5%AE%9A%E4%B9%89-TabBar-%E4%B9%8B%E7%90%86%E8%A7%A3-hittest/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xjshi.github.io/2015/05/03/%E8%87%AA%E5%AE%9A%E4%B9%89-TabBar-%E4%B9%8B%E7%90%86%E8%A7%A3-hittest/","path":"2015/05/03/自定义-TabBar-之理解-hittest/","title":"自定义 TabBar 之理解 hittest"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>自定义 TabBar 之理解 hittest | land</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">land</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ebebya</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xjshi.github.io/2015/05/03/%E8%87%AA%E5%AE%9A%E4%B9%89-TabBar-%E4%B9%8B%E7%90%86%E8%A7%A3-hittest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ebebya">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="land">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          自定义 TabBar 之理解 hittest
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2015-05-03 10:23:16" itemprop="dateCreated datePublished" datetime="2015-05-03T10:23:16+00:00">2015-05-03</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>需求的TabBar是这样的：5个 tabItem， 中间的那个 item 部分超出系统默认TabBar的上边界。</p>
+<span id="more"></span>
+<p>那么实现的关键点就是如何在点击它突出的部分的时候，也可以正常获得响应。我来把问题简化，我把下图中的红色的视图（类型为<code>RedView</code>，继承自<code>UIView</code>）称为 redview，蓝色的视图（类型为<code>BlueView</code>，继承自<code>UIView</code>）称为 blueview。redview 添加在试图控制器的视图上，blueview 添加在 redview上。</p>
+<img src="/2015/05/03/%E8%87%AA%E5%AE%9A%E4%B9%89-TabBar-%E4%B9%8B%E7%90%86%E8%A7%A3-hittest/red-blue.png" class="">
+<p>在 RedView 和 BlueView 的<code>- (UIView *)hitTest:withEvent:</code>方法和<code>- (void)touchesBegan:withEvent:</code>都保持默认实现的情况下，点击 blueview 超出 redview 的部分，两个视图的<code>- (void)touchesBegan:withEvent:</code>均不执行。</p>
+<p>下面我来改造一下 RedView 的<code>- (UIView *)hitTest:withEvent:</code>方法，如下：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">UIView</span> *)hitTest:(<span class="built_in">CGPoint</span>)point withEvent:(<span class="built_in">UIEvent</span> *)event &#123;</span><br><span class="line">    <span class="built_in">UIView</span> *view = [<span class="keyword">super</span> hitTest:point withEvent:event];</span><br><span class="line">    <span class="built_in">UIView</span> *blueview = <span class="keyword">self</span>.subviews.firstObject;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">CGRectContainsPoint</span>(blueview.frame, point)) &#123;</span><br><span class="line">        <span class="keyword">return</span> blueview;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> view;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样重写以后，再点击上边说的那部分， RedView 的 hittesst 就会把 blueview 作为 hittest view，因此会执行到 blueview 的<code>- (void)touchesBegan:withEvent:</code>方法。</p>
+<p>为什么会这样？</p>
+<p>我们可以看一下<code>- (UIView *)hitTest:withEvent:</code>的说明(读原文吧，比我描述的清楚)：</p>
+<blockquote>
+<p>This method traverses the view hierarchy by calling the pointInside:withEvent: method of each subview to determine which subview should receive a touch event. If pointInside:withEvent: returns YES, then the subview’s hierarchy is similarly traversed until the frontmost view containing the specified point is found. If a view does not contain the point, its branch of the view hierarchy is ignored. You rarely need to call this method yourself, but you might override it to hide touch events from subviews.</p>
+</blockquote>
+<blockquote>
+<p>This method ignores view objects that are hidden, that have disabled user interactions, or have an alpha level less than 0.01. This method does not take the view’s content into account when determining a hit. Thus, a view can still be returned even if the specified point is in a transparent portion of that view’s content.</p>
+</blockquote>
+<blockquote>
+<p>Points that lie outside the receiver’s bounds are never reported as hits, even if they actually lie within one of the receiver’s subviews. This can occur if the current view’s clipsToBounds property is set to NO and the affected subview extends beyond the view’s bounds.</p>
+</blockquote>
+<p>想要跟深入的了解这部分内容，可以阅读 Response Chain 相关的文档。这里贴上地址：<a target="_blank" rel="noopener" href="https://developer.apple.com/library/content/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/event_delivery_responder_chain/event_delivery_responder_chain.html">https://developer.apple.com/library/content/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/event_delivery_responder_chain/event_delivery_responder_chain.html</a></p>
+<p>到这里如何定义需求中的Tabbar怎么实现就很明显了。直接放个Button在中间就好了，然后调整其他四个TabItem的位置。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/iOS/" rel="tag"># iOS</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2015/04/04/Event-Delivery-The-Responder-Chain/" rel="prev" title="Event Delivery: The Responder Chain">
+                  <i class="fa fa-chevron-left"></i> Event Delivery: The Responder Chain
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2015/06/14/What-s-New-in-iOS-9/" rel="next" title="What's New in iOS 9">
+                  What's New in iOS 9 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ebebya</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
